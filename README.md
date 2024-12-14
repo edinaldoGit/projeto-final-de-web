@@ -38,20 +38,21 @@ O **QuixAlugue Universitário** visa gerar impactos positivos tanto para os estu
 ## :triangular_flag_on_post:	 Principais funcionalidades da aplicação
 
 ### Funcionalidades Acessíveis a Todos os Usuários:
+- **Criação de conta**: Estudantes e Locadores podem criar conta na plataforma.
 - **Visualização de imóveis**: Todos os usuários podem navegar e visualizar os imóveis disponíveis na plataforma, com informações como preço, localização e características principais.
 - **Consulta de detalhes dos imóveis**: Visitantes podem ver informações detalhadas de cada imóvel, incluindo fotos e descrições.
 - **Informações sobre a plataforma**: Acesso a informações gerais sobre o funcionamento da plataforma, seus objetivos e benefícios.
 
-### Funcionalidades Restritas a Usuários Logados:
+### Funcionalidades Restritas a Usuários Logados ou que já possuem conta:
 
 #### Para Locatários (Estudantes Universitários):
-- **Criação de conta e login**: Estudantes podem criar uma conta e acessar a plataforma com login.
+- **Login**: Estudantes que já criaram uma conta como Locatário podem acessar a plataforma com login.
 - **Busca e filtragem de imóveis**: Filtrar imóveis por preço, proximidade de pontos estratégicos (universidades, pontos de ônibus, supermercados, etc.).
 - **Contato com locadores**: Enviar mensagens ou formulários de contato diretamente aos locadores.
 - **Salvar imóveis**: Adicionar imóveis à lista de favoritos para consulta futura.
 
 #### Para Locadores (Proprietários de Imóveis):
-- **Criação de conta e login**: Locadores podem criar uma conta e fazer login na plataforma.
+- **Login**: Locadores que já criaram uma conta como Locador podem acessar a plataforma com login.
 - **Publicação de anúncios**: Inserir imóveis para aluguel, incluindo informações como preço, localização, fotos e descrição detalhada.
 - **Edição e remoção de anúncios**: Modificar ou excluir anúncios de imóveis já publicados.
 - **Visualização de interessados**: Acompanhar mensagens e interações de locatários interessados nos seus imóveis.
