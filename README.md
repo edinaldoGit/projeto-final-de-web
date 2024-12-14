@@ -23,8 +23,6 @@ O **QuixAlugue Universitário** visa gerar impactos positivos tanto para os estu
 
 ## :people_holding_hands: Papéis ou tipos de usuário da aplicação
 
-# Tipos de Usuário
-
 ### 1. Usuário Não Logado
 - **Descrição**: Qualquer visitante que acessa o site sem estar autenticado.
   
