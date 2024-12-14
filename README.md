@@ -1,3 +1,4 @@
+![Logo do QuixAlugue](Logo.jpg)
 
 # :checkered_flag: QuixAlugue Universitário
 
