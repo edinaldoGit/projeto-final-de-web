@@ -39,7 +39,7 @@ O **QuixAlugue Universitário** visa gerar impactos positivos tanto para os estu
 
 ### Funcionalidades Acessíveis a Usuários Não Logados:
 - **Criação de conta**: Estudantes e Locadores podem criar conta na plataforma.
-- **Visualização de imóveis**: Todos os usuários podem navegar e visualizar os imóveis disponíveis na plataforma, com informações como preço, localização e características principais.
+- **Visualização de imóveis**: Usuários não logados podem navegar e visualizar os imóveis disponíveis na plataforma, com informações como preço, localização e características principais.
 - **Consulta de detalhes dos imóveis**: Visitantes podem ver informações detalhadas de cada imóvel, incluindo fotos e descrições.
 - **Informações sobre a plataforma**: Acesso a informações gerais sobre o funcionamento da plataforma, seus objetivos e benefícios.
 
