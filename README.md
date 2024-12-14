@@ -19,7 +19,7 @@ O **QuixAlugue Universitário** visa gerar impactos positivos tanto para os estu
 
   - **Para os estudantes:** O projeto contribui para a inclusão social e acadêmica, proporcionando opções de moradia mais acessíveis e próximas aos pontos de interesse, como os campus universitários, pontos de ônibus e serviços essenciais. Isso facilita a adaptação à vida universitária, reduzindo custos com transporte e proporcionando maior comodidade e qualidade de vida.
 
-  - **Para os locadores:** A plataforma oferece uma oportunidade de negócio ao conectar diretamente os locadores com um público específico e qualificado, simplificando o processo de divulgação e atraindo inquilinos que buscam opções mais econômicas.
+  - **Para os locadores:** A plataforma oferece uma oportunidade de negócio ao conectar diretamente os locadores com um público específico, simplificando o processo de divulgação e atraindo inquilinos que buscam opções mais econômicas.
 
 ## :people_holding_hands: Papéis ou tipos de usuário da aplicação
 
