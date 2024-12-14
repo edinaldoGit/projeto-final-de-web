@@ -2,7 +2,7 @@
 
 # :checkered_flag: QuixAlugue Universitário
 
-O **QuixAlugue Universitário** é uma plataforma digital que facilita a conexão entre locadores de imóveis e universitários em Quixadá, oferecendo anúncios acessíveis e próximos a pontos estratégicos da cidade.
+O **QuixAlugue Universitário** é uma plataforma que visa facilitar o acesso de universitários na cidade de Quixadá a imóveis com valores mais acessíveis, próximos a pontos estratégicos como universidades, pontos de ônibus e estabelecimentos essenciais, atendendo à demanda por moradia de baixo custo, comodidade e praticidade.
 
 ## :technologist: Membros da equipe
 
