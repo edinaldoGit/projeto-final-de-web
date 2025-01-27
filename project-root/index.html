@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuixAlugue</title>
+    <link rel="stylesheet" href="assets/css/modal.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/register.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/icone1.png" type="image/x-icon">
+    <script type="module" src="assets/js/script.js" defer></script>
+    <script type="module" src="assets/js/modal-login-register.js" defer></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img id="logo-home-horizontal" src="assets/img/logo_horizontal.png" alt="Logo do QuixAlugue">
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <button id="button-home" class="nav-bar-item">Home</button>
+                </li>
+                <li class="separador"></li>
+                <li>
+                    <button id="button-pontos-e" class="nav-bar-item">Pontos Estratégicos</button>
+                </li>
+                <li class="separador"></li>
+                <li>
+                    <button id="button-sobre" class="nav-bar-item">Sobre Nós</button>
+                </li>
+                <li class="separador"></li>
+                <li>
+                    <button id="button-suporte" class="nav-bar-item">Suporte</button>
+                </li>
+                <li>    
+                    <button id="button-login">
+                        Login <i class="bi bi-box-arrow-in-right"></i>
+                    </button>
+                </li>
+            </ul>       
+        </nav>
+    </header>
+
+    <main id="main-content">
+    </main>
+
+    <footer>
+        <img src="assets/img/logo-vertical-footer.png" alt="Logo do QuixAlugue">
+        <div class="links">
+            <a href="#sobre">Sobre Nós</a>
+            <a href="#">Termos de Uso</a>
+            <a href="#">Contato</a>
+        </div>
+    </footer>
+
+    <!-- Modal de Login e Cadastro -->
+    <div class="modal-overlay" id="modal-login-register" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <!--COLUNA ESQUERDA -->
+            <div class="left-column">
+                <button id="button-modal-login">Login</button>
+                <button id="button-modal-register">Criar Conta</button>
+            </div>
+            <!--COLUNA DIREITA-->
+            <div class="right-column">
+                <div class="area-button-close-modal">
+                    <button id="button-close-modal" aria-label="Fechar">
+                        <span class="icon-default">
+                            <i class="bi bi-x-circle"></i>
+                        </span>
+                        <span class="icon-hover">
+                            <i class="bi bi-x-circle-fill"></i>
+                        </span>
+                    </button>
+                </div> 
+                <!-- SEÇÃO DE LOGIN-->
+                <div id="sec-login"> 
+                    <div class="area-logo-title">
+                        <img src="assets/img/logo.png" alt="">
+                        <h1 id="title-section">LOGIN</h1>
+                    </div>
+                    <form class="login-form">
+                        <div class="icon-and-placeholder">
+                            <i class="bi bi-person-circle form-i"></i>
+                            <input class="input-login" type="email" id="login-email" placeholder="Email" required>
+                        </div>
+                        <div class="icon-and-placeholder">
+                            <i class="bi bi-key-fill form-i"></i>
+                            <input class="input-login" type="password" id="login-senha" placeholder="Senha" required>
+                        </div>
+                        <div class="forgot-and-button-login">
+                            <a id="link-forgot-password" href="#">Esqueceu a senha?</a>
+                            <button type="submit" id="button-login-modal">Login</button>
+                        </div> 
+                    </form>
+                </div>
+                <!-- SEÇÃO DE CADASTRO-->
+                <div id="sec-register"> 
+                    <div class="area-logo-title">
+                        <h1 id="title-section">CRIAR CONTA</h1>
+                    </div>
+                    <form class="register-form">
+                        <!-- Informações Gerais -->
+                        <fieldset>
+                            <legend>Informações Gerais</legend>
+                            <div class="line-form">
+                                <label class="label-form" for="nome">Nome completo</label>
+                                <input class="box-form" type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                            </div>
+                            <div class="line-form">
+                                <label class="label-form" for="email">E-mail</label>
+                                <input class="box-form" type="email" id="email" name="email" placeholder="Insira seu email" required>
+                            </div>
+                            <div class="line-form-two-columns">
+                                <div class="line-form">
+                                    <label class="label-form" for="senha">Senha</label>
+                                    <input class="box-form" type="password" id="senha" name="senha" placeholder="Crie uma senha" required>
+                                </div>
+                                <div class="line-form">
+                                    <label class="label-form" for="confirmar-senha">Confirmar Senha</label>
+                                    <input class="box-form" type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Repita a senha" required>
+                                </div>
+                            </div>
+                            <div class="line-form-two-columns">
+                                <div class="line-form">
+                                    <label class="label-form" for="telefone">Telefone:</label>
+                                    <input class="box-form" type="tel" id="telefone" name="telefone" placeholder="(__) _ ____-____">
+                                </div>
+                                <div class="line-form"> 
+                                    <label class="label-form" for="tipo-usuario">Tipo de Usuário:</label>
+                                    <select id="register-type-user-select" name="tipo-usuario" required>
+                                        <option value="" disabled selected>- Selecione -</option>
+                                        <option value="locatario">Sou Estudante (Locatário)</option>
+                                        <option value="locador">Sou Proprietário (Locador)</option>
+                                    </select>
+                                </div>
+                            </div> 
+                        </fieldset>
+                        <!-- Informações para Locatário -->
+                        <fieldset id="locatario-info">
+                            <legend>Informações para Locatários</legend>
+                            <div class="line-form-three-columns">
+                                <div class="line-form" > 
+                                    <label class="label-form" for="universidade">Universidade:</label>
+                                    <select id="universidade" name="universidade" required>
+                                        <option value="ufc">UFC</option>
+                                        <option value="ifce">IFCE</option>
+                                        <option value="catolica">CATÓLICA</option>
+                                        <option value="fadat">FADAT</option>
+                                        <option value="uece">UECE</option>
+                                    </select>
+                                </div>
+                                <div class="line-form" >
+                                    <label class="label-form" for="curso">Curso:</label>
+                                    <input class="box-form" type="text" id="curso" name="curso" placeholder="Ex: Medicina">
+                                </div>
+                                <div class="line-form" >
+                                    <label class="label-form" for="ano-ingresso">Ano de Ingresso:</label>
+                                    <input class="box-form" type="number" id="ano-ingresso" name="ano-ingresso" min="2000" max="2100">
+                                </div> 
+                            </div>
+                        </fieldset>
+                        <!-- Informações para Locador -->
+                        <fieldset id="locador-info" style="display: none;">
+                            <legend>Informações para Locadores</legend>
+                            <label class="label-form" for="empresa">Nome da Empresa (Opcional):</label>
+                            <input class="box-form" type="text" id="empresa" name="empresa">
+    
+                            <label class="label-form" for="endereco">Endereço:</label>
+                            <input class="box-form" type="text" id="endereco" name="endereco">
+                        </fieldset>
+                        <!-- Aceitação de Termos -->
+                        <fieldset>
+                            <legend>Confirmação</legend>
+                            <label class="confirm-checkbox">
+                                <input type="checkbox" name="termos" required>
+                                Eu concordo com os <a href="#">termos de uso</a> e a <a href="#">política de privacidade</a>.
+                            </label>
+                        </fieldset>
+                        <button id="button-register" type="submit">Continuar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>

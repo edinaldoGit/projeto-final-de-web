@@ -1,0 +1,158 @@
+/*Configurações gerais de MODAIS*/
+/*MODAL DE LOGIN E CADASTRO----------------------------------------------------------*/
+/* Configuração inicial do modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    background-color: var(--color-background-modal);
+    font-family: "Questrial", serif;
+    inset: 0; /* Atalho para top: 0; right: 0; bottom: 0; left: 0 */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 8em 20%;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0; /* Começa transparente */
+    animation: fadeSlideIn 0.5s ease forwards; /* Adiciona animação */
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    justify-items: center;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    transform: translateY(50px); /* Move para baixo inicialmente */
+    opacity: 0; /* Começa invisível */
+    animation: modalContentIn 0.5s ease forwards; /* Animação para entrada */
+}
+
+/* Animação para o modal-overlay */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0; /* Invisível */
+    }
+    100% {
+        opacity: 1; /* Visível */
+    }
+}
+
+/* Animação para o conteúdo do modal */
+@keyframes modalContentIn {
+    0% {
+        opacity: 0; /* Invisível */
+        transform: translateY(50px); /* Move para baixo */
+    }
+    100% {
+        opacity: 1; /* Visível */
+        transform: translateY(0); /* Posição final */
+    }
+}
+
+/* Animação para fechamento (opcional) */
+@keyframes modalContentOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+/* Botão para fechar */
+#button-close-modal {
+    color: var(--color-A);
+    background-color: transparent;
+    border: none;
+    font-size: 2em;
+    padding: 15px 15px 0 0;
+    cursor: pointer;
+}
+
+/*Deixando bordas arredondadas*/
+.left-column{
+    border-radius: 2em 0 0 2em;
+}
+
+.right-column{
+    border-radius: 0 2em 2em 0;
+}
+
+/*Coluna Direita ---------------------------------------------------------------------*/
+.right-column{
+    background-color: white;
+
+    width: 100%;
+    height: 100%;
+}
+
+/*Botão de fechar o modal de login/cadastro-------------------------------------------*/
+.area-button-close-modal{
+    display: flex;
+    justify-content: flex-end;
+
+    padding: 10px;
+}
+
+
+/* Ícone padrão */
+#button-close-modal .icon-default {
+    display: block;
+}
+
+/* Ícone exibido no hover */
+#button-close-modal .icon-hover {
+    display: none;
+}
+
+/* Troca de ícones ao passar o mouse */
+#button-close-modal:hover .icon-default {
+    display: none;
+}
+
+#button-close-modal:hover .icon-hover {
+    display: block;
+}
+
+/*Coluna Esquerda---------------------------------------------------------------------*/
+.left-column{
+    display: flex; /* Ativa o Flexbox */
+    flex-direction: column; /* Organiza os elementos verticalmente */
+    justify-content: center; /* Centraliza os elementos verticalmente */
+    align-items: end; /* Centraliza os elementos horizontalmente */
+    background-color: var(--color-A);
+    background-image: url('background-modal-login.png'); /* URL da imagem */
+    background-size: cover; /* Faz a imagem preencher a área da div */
+    background-position: center; /* Centraliza a imagem na div */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    width: 100%;
+    height: 100%;
+}
+
+
+/*Formatando botões de alternar entre Login e Cadastro---------------------------------*/
+#button-modal-login, #button-modal-register{
+    display: flex;
+    font-size: 1.7em;
+    font-family: "Questrial", serif;
+    border-radius: 30px 0 0 30px;   
+    align-items: center; 
+    border: none;
+    transition: all 0.2s ease-out;
+
+    height: 30px;
+}
+
+#button-modal-login{
+    padding: 1em 1em 1em 4em;
+}
+
+#button-modal-register{
+    padding: 1em 1em 1em 1.2em;
+}

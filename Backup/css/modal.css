@@ -1,0 +1,118 @@
+/*Configurações gerais de MODAIS*/
+
+/*MODAL DE LOGIN E CADASTRO----------------------------------------------------------*/
+body{
+    display: flex; /* Usado para alinhar conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    background-color: #00000065;
+    font-family: "Questrial", serif;
+    
+
+    padding: 8em 20%;
+    width: 100vw; /* 100% da largura da tela */
+    height: 100vh; /* 100% da altura da tela */
+}
+
+.modal-overlay{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    justify-items: center;
+    border-radius: 20px;
+
+    width: 100%;
+    height: 100%;
+}
+
+#sec-criar-conta{
+    display: none;
+}
+
+/*Coluna Direita ---------------------------------------------------------------------*/
+.right-column{
+    background-color: white;
+
+    width: 100%;
+    height: 100%;
+}
+
+/*Botão de fechar o modal de login/cadastro-------------------------------------------*/
+.area-button-close-modal{
+    display: flex;
+    justify-content: flex-end;
+
+    padding: 10px;
+}
+
+.button-close-modal{
+    color: var(--color-A);
+    background-color: transparent;
+    border: none;
+    font-size: 2em;
+
+    padding: 15px 15px 0 0;
+} 
+
+/* Ícone padrão */
+.button-close-modal .icon-default {
+    display: block;
+}
+
+/* Ícone exibido no hover */
+.button-close-modal .icon-hover {
+    display: none;
+}
+
+/* Troca de ícones ao passar o mouse */
+.button-close-modal:hover .icon-default {
+    display: none;
+}
+
+.button-close-modal:hover .icon-hover {
+    display: block;
+}
+
+/*Coluna Esquerda---------------------------------------------------------------------*/
+.left-column{
+    display: flex; /* Ativa o Flexbox */
+    flex-direction: column; /* Organiza os elementos verticalmente */
+    justify-content: center; /* Centraliza os elementos verticalmente */
+    align-items: end; /* Centraliza os elementos horizontalmente */
+    background-color: var(--color-A);
+    background-image: url('background-modal-login.png'); /* URL da imagem */
+    background-size: cover; /* Faz a imagem preencher a área da div */
+    background-position: center; /* Centraliza a imagem na div */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    width: 100%;
+    height: 100%;
+}
+
+.link-modal-login, .link-modal-register{
+    display: flex;
+    font-size: 1.7em;
+    font-family: "Questrial", serif;
+    border-radius: 30px 0 0 30px;   
+    align-items: center; 
+    border: none;
+    transition: transform 0.3s ease-in-out;
+
+    height: 30px;
+}
+
+.link-modal-login{
+    padding: 1em 1em 1em 4em;
+}
+
+.link-modal-register{
+    padding: 1em 1em 1em 1.2em;
+}
+
+/*Deixando bordas*/
+.left-column{
+    border-radius: 2em 0 0 2em;
+}
+
+.right-column{
+    border-radius: 0 2em 2em 0;
+}

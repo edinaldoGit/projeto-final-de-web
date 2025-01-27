@@ -1,0 +1,203 @@
+@charset "UTF-8";
+@import url(reset.css);
+@import url(variables.css);
+@import url(modal.css);
+
+/*Área da Logo e Título da seção: "Login" ou "Cadastro"-------------------------------*/
+.area-logo-title{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+/*Título da seção: 'LOGIN'/'CADASTRO'*/
+#title-section{
+    color: var(--color-A);
+    font-size: 2em;
+}
+
+#sec-register{
+    color: var(--color-A);
+    padding: 0em 0.5em 1em 2.5em;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
+}
+
+.label-form{
+    padding: 0 0 0.5em 1em;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    font-size: 1em;
+
+    /* Adiciona dimensões fixas e barra de rolagem */
+    max-height: 35em; /* Ajuste conforme necessário */
+    overflow-y: auto;
+    padding-right: 1.5em; /* Para evitar que o conteúdo encoste na barra de rolagem */
+}
+
+.register-form legend{
+    display: none;
+}
+
+.line-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.box-form {
+    color: var(--color-A);
+    background-color: var(--color-E);
+    font-size: 1.2em;
+    font-family: var(--fonte-A);
+    border-radius: 1em;
+    outline-color: var(--color-A);
+    padding: 0.7em 1.2em;
+    margin-left: 0.5em;
+}
+
+.box-form::placeholder{
+    color: var(--color-C);
+}
+
+.line-form-two-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.line-form-two-columns > * {
+    flex: 1 1 45%; 
+}
+
+.line-form-three-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.line-form-three-columns > * {
+    flex: 1 1 1 45%; 
+}
+
+/*Deixando as Áreas de preenchimento específicas de cada usuário ocultas por padrão*/
+#locador-info, #locatario-info{
+    display: none;
+}
+
+/*Estilizando barra de rolagem do formulário*/
+.register-form::-webkit-scrollbar {
+    width: 1em; /* Largura da barra de rolagem */
+}
+
+.register-form::-webkit-scrollbar-thumb {
+    background-color: var(--color-C); /* Cor do "polegar" (a parte que se move) */
+    border-radius: 1em; /* Arredondamento */
+}
+
+.register-form::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-A); /* Cor do "polegar" ao passar o mouse */
+}
+
+.register-form::-webkit-scrollbar-track {
+    background-color: var(--color-E); /* Cor do fundo da barra de rolagem */
+    border-radius: 1em; /* Arredondamento */
+}
+
+/* Formatação para SELECTS -----------------------------------------------------------*/
+select {
+    width: 100%; 
+    padding: 0.7em 1.2em;
+    font-size: 1.1em;
+    font-family: var(--fonte-A);
+    color: var(--color-A);
+    background-color: white;
+    border: 2px solid var(--color-C); 
+    border-radius: 1em;
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+}
+
+select:focus {
+    border-color: var(--color-A); 
+    outline: none; /
+}
+
+select option {
+    padding: 10px; 
+    font-size: 16px; 
+    background-color: var(--color-E);
+    color: var(--color-A); 
+}
+
+select option:checked {
+    background-color: var(--color-A); 
+    color: white; 
+}
+
+/*Formatação para CAIXA DE NÚMERO-----------------------------------------------------*/
+input[type="number"] {
+    padding: 0.7em 1.2em;
+    font-size: 1.1em;
+    border: 2px solid var(--color-C);
+    background-color: white;
+    border-radius: 1em;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Quando o campo está em foco */
+input[type="number"]:focus {
+    border-color: var(--color-A);
+}
+
+/* Remove as setas no Chrome, Edge e Safari */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+/*Formatando CHECKBOX-----------------------------------------------------------------*/
+input[type="checkbox"] {
+    accent-color: var(--color-C); 
+    cursor: pointer;
+    border: none;
+    width: 15px;
+    height: 15px;
+}
+
+.confirm-checkbox{
+    font-size: 1.2em;
+    padding: 1em 0.5em;
+    color: var(--color-A);
+}
+
+.confirm-checkbox a{
+    color: var(--color-A);
+    font-weight: bold;
+}
+
+/*Botão de efetuar CADASTRO ----------------------------------------------------------*/
+#button-register{
+    display: flex;
+    color: white;
+    font-size: 1.3em;
+    font-family: "Questrial", serif;
+    background-color: var(--color-A);
+    border-radius: 30px;   
+    align-items: center; 
+    justify-content: center;
+    border: none;
+    transition: transform 0.3s ease-in-out;
+
+    padding: 1em 1em;
+    height: 30px;
+}

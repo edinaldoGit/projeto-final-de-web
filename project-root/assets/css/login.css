@@ -1,0 +1,112 @@
+@charset "UTF-8";
+@import url(reset.css);
+@import url(variables.css);
+@import url(modal.css);
+
+
+/*Área da Logo e Título da seção: "Login" ou "Cadastro"-------------------------------*/
+/*Logo*/
+.area-logo-title img{
+    width: 200px;
+    height: 140px;
+}
+
+.area-logo-title{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; 
+}
+
+/*Título da seção: 'LOGIN'/'CADASTRO'*/
+#title-section{
+    color: var(--color-A);
+}
+
+/*Área de Formulário-------------------------------------------------------------------*/
+.login-form{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 5px;
+
+    padding: 2em 2em;
+}
+
+.icon-and-placeholder{
+    border-bottom: 2px solid var(--color-C);
+    padding-bottom: 5px;
+    padding-top: 20px;
+}
+
+.input-login{
+    font-family: var(--fonte-A);
+    font-size: 1.5em;
+}
+
+.form-i {
+    font-size: 1.7em;
+    margin-right: 15px;
+}
+
+.input-login::placeholder, .form-i{
+    color: var(--color-C);
+}
+
+.input-login, textarea{
+    color: var(--color-A);
+    outline: none;
+}
+
+/*Área de 'Esqueceu a senha?' e Botão de Login---------------------------------------*/
+.forgot-and-button-login{
+    display: flex;
+    align-items: center;
+
+    padding: 2em 0;
+    gap: 5em;
+}
+
+#link-forgot-password{
+   color: var(--color-A);
+   font-size: 1em;
+}
+
+#button-login-modal{
+    display: flex;
+    color: white;
+    font-size: 1.3em;
+    font-family: "Questrial", serif;
+    background-color: var(--color-A);
+    border-radius: 30px;   
+    align-items: center; 
+    border: none;
+    transition: transform 0.3s ease-in-out;
+
+    padding: 1em 1em;
+    height: 30px;
+}
+
+/*Hovers */
+#link-forgot-password:hover{
+    text-decoration: underline;
+}
+
+#button-login-modal:hover{
+    background-color: var(--color-D);
+    transform: scale(1.1); 
+}
+
+/*Área de outras opções de Login -----------------------------------------------------*/
+.login-options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    color: var(--color-A);
+    font-size: 1.1em;
+    font-weight: bold;
+    gap: 0.5em;
+}
