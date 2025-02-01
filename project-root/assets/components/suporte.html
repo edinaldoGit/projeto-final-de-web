@@ -1,0 +1,95 @@
+<section id="suporte" class="suporte-container">
+    <!-- Menu de Navegação Fixo -->
+    <div id="background-suporte-menu">
+        <nav class="suporte-menu">
+            <ul>
+                <li><a id="link-faq" href="#faq" class="active">Perguntas Frequentes</a></li>
+                <li><a id="link-form-contact" href="#formulario-contato">Fale Conosco</a></li>
+                <li><a id="link-direct-contact" href="#contato-direto">Contato Direto</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <!-- Seção de Perguntas Frequentes (FAQ) -->
+    <div id="faq" class="faq" data-aos="fade-right">
+        <div id="title-and-search">
+            <h3>Perguntas Frequentes</h3>
+            <div id="support-search-faq">
+                <i class="bi bi-search"></i>
+                <input id="support-search-camp" type="text" placeholder="Encontre sua dúvida..."/>
+            </div>
+        </div>
+        <div id="items-faq-and-icon">
+            <div id="items-faq">
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <summary>Como criar uma conta?</summary>
+                        <span class="arrow">&#9654;</span> <!-- Seta para a direita -->
+                    </div>
+                    <p>Para criar uma conta, clique em "Entrar" no topo da página e selecione "Cadastrar-se".</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <summary>Como anunciar um imóvel?</summary>
+                        <span class="arrow">&#9654;</span> <!-- Seta para a direita -->
+                    </div>
+                    <p>Após fazer login, vá até o seu perfil e clique em "Anunciar Imóvel".</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <summary>O QuixAlugue cobra alguma taxa?</summary>
+                        <span class="arrow">&#9654;</span> <!-- Seta para a direita -->
+                    </div>
+                    <p>Não. O QuixAlugue é um serviço gratuito para estudantes e locadores.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <summary>O QuixAlugue cobra alguma taxa?</summary>
+                        <span class="arrow">&#9654;</span> <!-- Seta para a direita -->
+                    </div>
+                    <p>Não. O QuixAlugue é um serviço gratuito para estudantes e locadores.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção de Formulário de Contato -->
+    <div id="formulario-contato" class="formulario-contato" data-aos="fade-right">
+        <h3>Fale Conosco</h3>
+        <form id="form-contact" action="#" method="post">
+            <div class="row-form-contact">
+                <div class="col-form-contact">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                </div>
+                <div class="col-form-contact">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Seu Email" required>
+                </div>
+                <div class="col-form-contact">
+                    <label for="assunto">Assunto:</label>
+                    <select id="assunto" name="assunto">
+                        <option value="" disabled selected>- Selecione -</option>
+                        <option value="duvida">Dúvida</option>
+                        <option value="problema">Problema técnico</option>
+                        <option value="denuncia">Denúncia</option>
+                        <option value="sugestao">Sugestão</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-form-contact">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="msg-form-contact" name="mensagem" rows="4" required></textarea>
+            </div>
+            <button id="button-send-msg-support" type="submit">Enviar Mensagem</button>
+        </form>
+    </div>
+
+    <!-- Seção de Contato Direto -->
+    <div id="contato-direto" class="contato-direto" data-aos="fade-right">
+        <h3>Contato Direto</h3>
+        <p><strong>E-mail:</strong> suporte@quixalugue.com.br</p>
+        <p><strong>WhatsApp:</strong> (XX) XXXX-XXXX</p>
+        <p><strong>Redes Sociais:</strong> <a href="#">Instagram</a> | <a href="#">Twitter</a> | <a href="#">Facebook</a></p>
+    </div>
+</section>

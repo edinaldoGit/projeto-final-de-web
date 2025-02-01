@@ -1,0 +1,91 @@
+/* Estilos gerais para a seção "sobre-nos" */
+#sobre-nos {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--fonte-A);
+    color: var(--color-A);
+    align-items: center;
+    text-align: justify;
+    overflow-x: hidden;
+}
+
+#sobre-nos p {
+    font-size: var(--font-size-p);
+}
+
+/* Estilos para cada caixa de conteúdo (missão, visão, valores) */
+.sobre-box {
+    padding: 5em 15em;
+}
+
+.sobre-box h2 {
+    font-size: var(--font-size-title);
+}
+
+.about-text-and-icon {
+    display: flex;
+    align-items: center;
+    gap: 3em;
+}
+
+.about-icon {
+    padding: 3em 0;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4em;
+    text-align: justify;
+}
+
+/* Estilos específicos para a seção "missão" */
+#missao {
+    color: white;
+    background-color: var(--color-F);
+}
+
+#missao h2,
+#valores h2 {
+    margin-left: 5em;
+}
+
+#missao .about-text,
+#valores .about-text {
+    margin-left: 6em;
+}
+
+#missao .about-text-and-icon,
+#valores .about-text-and-icon {
+    margin-right: 7em;
+}
+
+/* Estilos específicos para a seção "visão" */
+#visao {
+    color: rgb(16, 63, 125);
+    background-color: white;
+}
+
+#visao h2 {
+    text-align: right;
+    margin-right: 5em;
+}
+
+#visao .about-text {
+    margin-right: 6em;
+}
+
+#visao .about-text-and-icon {
+    margin-left: 9em;
+}
+
+/* Estilos específicos para a seção "valores" */
+#valores {
+    color: white;
+    background-color: var(--color-F);
+}
+
+/* Estilos para itens de valores (se houver) */
+.about-values-items {
+    margin-top: 1em;
+}

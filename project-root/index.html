@@ -4,27 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuixAlugue</title>
+    <!--ÍCONE DA ABA -->
+    <link rel="shortcut icon" href="assets/img/icone1.png" type="image/x-icon">
+
+    <!--Importando Estilos CSS-->
     <link rel="stylesheet" href="assets/css/modal.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/login.css">
     <link rel="stylesheet" href="assets/css/register.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/sobre.css">
+    <link rel="stylesheet" href="assets/css/suporte.css">
+
+    <!--Importando Fontes do GOOGLE FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+
+    <!--Importando ÍCONES DO BOOTSTRAP-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/img/icone1.png" type="image/x-icon">
+
+    <!-- Adicionando AOS - Animação de elementos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!--Importando JAVASCRIPT-->
     <script type="module" src="assets/js/script.js" defer></script>
     <script type="module" src="assets/js/modal-login-register.js" defer></script>
 </head>
-
 <body>
     <!-- Header -->
     <header>
         <div class="logo">
-            <img id="logo-home-horizontal" src="assets/img/logo_horizontal.png" alt="Logo do QuixAlugue">
+            <img id="logo-home-horizontal" src="assets/img/logo-horizontal-sem-fundo.png" alt="Logo do QuixAlugue">
         </div>
+        <!-- Barra de Navegação do HEADER -->
         <nav class="nav-bar">
             <ul>
                 <li>
@@ -44,23 +59,27 @@
                 </li>
                 <li>    
                     <button id="button-login">
-                        Login <i class="bi bi-box-arrow-in-right"></i>
+                        Login / Criar Conta <i class="bi bi-box-arrow-in-right"></i>
                     </button>
                 </li>
-            </ul>       
+            </ul>    
+            <div id="indicator"></div>   
         </nav>
     </header>
-
+    <!-- Contéudo Principal (main) - Carregado dinamicamente com JS -->
     <main id="main-content">
     </main>
 
+    <!-- Footer -->
     <footer>
         <img src="assets/img/logo-vertical-footer.png" alt="Logo do QuixAlugue">
-        <div class="links">
-            <a href="#sobre">Sobre Nós</a>
-            <a href="#">Termos de Uso</a>
-            <a href="#">Contato</a>
-        </div>
+        <p>
+            &copy; <span id="currentYear"></span> QuixAlugue. Todos os direitos reservados.
+        </p>
+        <p>
+            Desenvolvido por <strong>Francisco Edinaldo dos Santos Silva</strong>, aluno da <strong>Universidade Federal do Ceará - Campus de Quixadá</strong>, 
+            como parte da disciplina de <strong>Fundamentos de Desenvolvimento Web</strong>.
+          </p>
     </footer>
 
     <!-- Modal de Login e Cadastro -->
@@ -86,7 +105,7 @@
                 <!-- SEÇÃO DE LOGIN-->
                 <div id="sec-login"> 
                     <div class="area-logo-title">
-                        <img src="assets/img/logo.png" alt="">
+                        <img src="assets/img/logo-icone-sem-fundo.png" alt="">
                         <h1 id="title-section">LOGIN</h1>
                     </div>
                     <form class="login-form">

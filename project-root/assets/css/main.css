@@ -1,43 +1,56 @@
 @import url(reset.css);
 @import url(variables.css);
 
+/* Configuração de estrutura da página */
 body {
     display: flex;
     flex-direction: column;
-    position: relative; 
-    z-index: 1; /* Elementos normais começam no nível 1 */
+    position: relative;
+    z-index: 1; 
     min-height: 100vh;
 }
-
 
 header {
     display: flex;
     position: sticky;
-    font-size: 1.5em;
-    background-color: white;
-    box-shadow: 0 0 7px var(--color-A);
     z-index: 1000;
     top: 0;
     left: 0;
-
-    padding: 0.8em 4em; 
-    width: 100%; 
-    height: 6em;
+    padding: 0.7em 5em;
+    width: 100%;
+    height: 5.2em;
 }
-  
+
 main {
     flex: 1;
-    background-color: white;
-    overflow: auto; 
-    padding: 0.8em 4em; 
-
+    background-color: var(--color-background-main);
+    overflow: auto;
     width: 100%;
     height: 100%;
 }
-  
-footer {
-    width: 100%;
-    height: 20em; 
-}
-  
 
+footer {
+    display: flex;
+    gap: 2em;
+    width: 100%;
+    height: 8em;
+    padding: 0.8em 8em;
+}
+
+/* Estilizando barra de rolagem da página */
+body::-webkit-scrollbar {
+    width: 0.5em; 
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--color-C);
+    height: 12px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-B);
+}
+
+body::-webkit-scrollbar-track {
+    background-color: var(--color-E);
+}
