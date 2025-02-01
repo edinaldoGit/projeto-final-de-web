@@ -11,7 +11,8 @@ header {
 
 /* Logo */
 #logo-home-horizontal {
-    width: 270px; 
+    margin-top: 0.5em;
+    width: 200px; 
     height: auto; 
 }
 
@@ -76,9 +77,9 @@ header {
     background-color: var(--color-A);
     border-radius: 2em;
     border: none;
-    padding: 0 1em;
+    padding: 0.5em;
     width: 80%;
-    height: 90%;
+    height: 80%;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
@@ -98,10 +99,10 @@ header {
 #indicator {
     position: absolute;
     width: 0; 
-    height: 0.3em; 
+    height: 0.2em; 
     background-color: var(--color-B); 
-    bottom: 1.2em; 
+    bottom: 0.6em; 
     left: 0;
     border-radius: 1em; 
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
