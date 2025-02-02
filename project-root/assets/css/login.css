@@ -83,10 +83,11 @@
     border: none;
     padding: 1em;
     height: 30px;
+    cursor: pointer;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 #button-login-modal:hover {
-    background-color: var(--color-D);
+    background-color: var(--color-H);
     transform: scale(1.1);
 }

@@ -7,7 +7,9 @@ html {
     position: relative;
     padding-top: 6em;
     font-family: var(--fonte-A);
-    background-color: var(--color-background-support);
+    justify-self: center;
+    background-color: #FBFBFF;
+    width: 90%;
 }
 
 /* Menu de Suporte --------------------------------------------------------------*/
@@ -23,6 +25,8 @@ html {
     text-align: center;
     justify-content: center;
     border-radius: 1em;
+    opacity: 0; /* Começa invisível */
+    animation: fadeIn 1s ease-in-out forwards;
 }
 
 .suporte-menu ul {
@@ -44,7 +48,7 @@ html {
     color: var(--color-A);
     font-weight: bold;
     font-size: 1.2em;
-    padding: 0.5em;
+    padding: 0.3em;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
@@ -59,6 +63,15 @@ html {
     box-shadow: 0 2px 5px var(--color-A);
     scale: 1.02;
 }
+
+@keyframes fadeIn {
+    from {
+      opacity: 0; /* Inicia transparente */
+    }
+    to {
+      opacity: 1; /* Termina totalmente visível */
+    }
+  }
 
 #link-faq {
     border-right: 4px solid var(--color-A);
@@ -89,21 +102,21 @@ html {
 
 /* Seções do Suporte ---------------------------------------------------------------*/
 
-.suporte-container h3 {
+.suporte-container h1 {
     font-size: var(--font-size-title);
     justify-self: center;
-    margin-bottom: 1.5em;
+    margin-bottom: 1.7em;
 }
 
 #faq, 
 #contato-direto,
 #sec-form-contact {
-    padding: 2em 8em;
+    padding: 1em 0 4em 0;
 }
 
-#faq h3, 
-#contato-direto h3,
-#sec-form-contact h3 {
+#faq h1, 
+#contato-direto h1,
+#sec-form-contact h1 {
     color: var(--color-A);
 }
 
@@ -114,7 +127,7 @@ html {
     gap: 2em;
     color: white;
     padding-bottom: 8em;
-    width: 50%;
+    width: 60%;
     align-self: center;
 }
 
@@ -231,10 +244,10 @@ html {
     flex-direction: column;
     background-color: var(--color-A);
     color: white;
-    border-radius: 1.5em;
+    border-radius: 1em;
     font-size: 1.4em;
 
-    width: 45%;
+    width: 60%;
     padding: 2em;
     gap: 1em;
 }
@@ -320,5 +333,66 @@ html {
 }
 
 #button-send-msg-support:hover {
-    background-color: var(--color-D);
+    background-color: var(--color-B);
+}
+
+
+/*Área de Contato direto */
+#contato-direto{
+    justify-items: center;
+    padding: 0 0 8em 0;
+    margin-top: 5em;
+}
+
+#content-cont-dir{
+    display: grid;
+    grid-template-columns: 50% 2px 50%;
+    color: var(--color-A);
+    font-size: 1.5em;
+   justify-content: center;
+}
+
+.sect-sup-cont-dir{
+    padding: 2em;
+}
+
+#business-contact{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.profile-cont-dir {
+    width: 100px;
+    height: 100px; 
+    border-radius: 50%; 
+    border: 4px solid var(--color-A); 
+    overflow: hidden;  
+    justify-self: center;
+    display: flex;
+    margin: 1em 1em 1em 0;
+}
+
+.profile-cont-dir img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+#links-social-media{
+    display: flex;
+    gap: 0.5em;
+}
+
+#links-social-media a {
+    color: white;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    background-color: #3c65a7;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+}
+
+#links-social-media a:hover{
+    background-color: var(--color-G);
 }

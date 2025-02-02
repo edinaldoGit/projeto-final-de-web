@@ -54,3 +54,7 @@ body::-webkit-scrollbar-thumb:hover {
 body::-webkit-scrollbar-track {
     background-color: var(--color-E);
 }
+
+button {
+    cursor: pointer;
+}
