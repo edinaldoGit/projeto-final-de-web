@@ -10,11 +10,33 @@ let iconSenha = document.getElementById('i-senha');
 let alertMsgEmail1 = document.getElementById('alert-msg-email-login-1');
 let alertMsgEmail2 = document.getElementById('alert-msg-email-login-2');
 let alertMsgSenha = document.getElementById('alert-msg-password-login');
+let buttonLoginModal = document.getElementById('button-modal-login');
+let buttonLogin = document.getElementById('button-login');
 
 //Verifica se o email é valido
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
+}
+
+//Limpa os alertas
+function cleanAlertsLogin(camp){
+    if(camp === emailLogin){
+        alertEmailLogin.style.display = 'none';
+        alertMsgEmail1.style.display = 'none';
+        alertMsgEmail2.style.display = 'none';
+        iconEmail.classList.remove('form-i-alert');
+        emailLogin.classList.remove('input-login-alert');
+        contEmail.classList.remove('icon-and-placeholder-alert');
+    }
+    
+    if(camp === senhaLogin){
+        alertSenhaLogin.style.display = 'none';
+        alertMsgSenha.style.display = 'none';
+        iconSenha.classList.remove('form-i-alert');
+        senhaLogin.classList.remove('input-login-alert');
+        contSenha.classList.remove('icon-and-placeholder-alert');
+    }
 }
 
 function verifyValidateLogin(event) {
@@ -38,12 +60,7 @@ function verifyValidateLogin(event) {
         contEmail.classList.add('icon-and-placeholder-alert');
         isValid = false;
     } else {
-        alertEmailLogin.style.display = 'none';
-        alertMsgEmail1.style.display = 'none';
-        alertMsgEmail2.style.display = 'none';
-        iconEmail.classList.remove('form-i-alert');
-        emailLogin.classList.remove('input-login-alert');
-        contEmail.classList.remove('icon-and-placeholder-alert');
+        cleanAlertsLogin(emailLogin);
     }
 
     //valida senha
@@ -55,14 +72,10 @@ function verifyValidateLogin(event) {
         contSenha.classList.add('icon-and-placeholder-alert');
         isValid = false;
     } else {
-        alertSenhaLogin.style.display = 'none';
-        alertMsgSenha.style.display = 'none';
-        iconSenha.classList.remove('form-i-alert');
-        senhaLogin.classList.remove('input-login-alert');
-        contSenha.classList.remove('icon-and-placeholder-alert');
+        cleanAlertsLogin(senhaLogin);
     }
-    console.log("Evento submit capturado"); // Debug
 
+    console.log("Evento submit capturado"); // Debug
 
     if (!isValid) {
         console.log("Formulário inválido, impedindo envio..."); // Debug
@@ -70,27 +83,33 @@ function verifyValidateLogin(event) {
     } else {
         console.log("Formulário válido, permitindo envio..."); // Debug
     }
-
 }
 
 //Faz a validação dos campos
 loginForm.addEventListener('submit', verifyValidateLogin);
 
+//Limpa os alertas e o conteúdo digitado caso o usuário clique novamente no botão de login do modal
+buttonLoginModal.addEventListener('click', function(){
+    emailLogin.value = '';
+    senhaLogin.value = '';
+    cleanAlertsLogin(emailLogin);
+    cleanAlertsLogin(senhaLogin);
+});
+
+//Limpa os alertas e o conteúdo digitado caso o usuário clique no botão de login do inicio
+buttonLogin.addEventListener('click', function(){
+    emailLogin.value = '';
+    senhaLogin.value = '';
+    cleanAlertsLogin(emailLogin);
+    cleanAlertsLogin(senhaLogin);
+});
+
 //Limpa os alertas quando o usuário começa a digitar 
 emailLogin.addEventListener('input', function(){
-    alertEmailLogin.style.display = 'none';
-    alertMsgEmail1.style.display = 'none';
-    alertMsgEmail2.style.display = 'none';
-    iconEmail.classList.remove('form-i-alert');
-    emailLogin.classList.remove('input-login-alert');
-    contEmail.classList.remove('icon-and-placeholder-alert');
+    cleanAlertsLogin(emailLogin);
 });
 
 //Limpa os alertas quando o usuário começa a digitar 
 senhaLogin.addEventListener('input', function(){
-    alertSenhaLogin.style.display = 'none';
-    alertMsgSenha.style.display = 'none';
-    iconSenha.classList.remove('form-i-alert');
-    senhaLogin.classList.remove('input-login-alert');
-    contSenha.classList.remove('icon-and-placeholder-alert');
+    cleanAlertsLogin(senhaLogin);
 });

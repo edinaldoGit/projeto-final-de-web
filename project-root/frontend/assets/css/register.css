@@ -25,13 +25,14 @@ fieldset {
     display: flex;
     flex-direction: column;
     gap: 0.7em;
+    margin: 0 0.5em;
 }
 
 .label-form{
     padding: 0 0 0.5em 1em;
 }
 
-.register-form {
+#signup-form {
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -40,10 +41,10 @@ fieldset {
     /* Adiciona dimensões fixas e barra de rolagem */
     max-height: 35em; /* Ajuste conforme necessário */
     overflow-y: auto;
-    padding-right: 1.5em; /* Para evitar que o conteúdo encoste na barra de rolagem */
+    padding-right: 0.8em; /* Para evitar que o conteúdo encoste na barra de rolagem */
 }
 
-.register-form legend{
+#signup-form legend{
     display: none;
 }
 
@@ -60,7 +61,6 @@ fieldset {
     border-radius: 1em;
     outline-color: var(--color-A);
     padding: 0.7em 1.2em;
-    margin-left: 0.5em;
 }
 
 .box-form::placeholder{
@@ -83,30 +83,26 @@ fieldset {
     gap: 1em;
 }
 
-.line-form-three-columns > * {
-    flex: 1 1 1 45%; 
-}
-
 /*Deixando as Áreas de preenchimento específicas de cada usuário ocultas por padrão*/
 #locador-info, #locatario-info{
     display: none;
 }
 
 /*Estilizando barra de rolagem do formulário*/
-.register-form::-webkit-scrollbar {
+#signup-form::-webkit-scrollbar {
     width: 1em; /* Largura da barra de rolagem */
 }
 
-.register-form::-webkit-scrollbar-thumb {
+#signup-form::-webkit-scrollbar-thumb {
     background-color: var(--color-C); /* Cor do "polegar" (a parte que se move) */
     border-radius: 1em; /* Arredondamento */
 }
 
-.register-form::-webkit-scrollbar-thumb:hover {
+#signup-form::-webkit-scrollbar-thumb:hover {
     background-color: var(--color-A); /* Cor do "polegar" ao passar o mouse */
 }
 
-.register-form::-webkit-scrollbar-track {
+#signup-form::-webkit-scrollbar-track {
     background-color: var(--color-E); /* Cor do fundo da barra de rolagem */
     border-radius: 1em; /* Arredondamento */
 }
@@ -205,3 +201,28 @@ input[type="checkbox"] {
 #button-register:hover {
     background-color: var(--color-H);
 }
+
+.bi-asterisk{
+    cursor: pointer;
+    font-size: 0.7em;
+}
+
+/*Mensagens e alertas de erro*/
+.signup-alert-box{
+    color: var(--color-alert);
+    background-color: var(--color-alert-background);
+    outline-color: var(--color-alert);
+}
+
+.signup-alert-box::placeholder{
+    color: var(--color-alert-1);
+}
+
+.label-alert {
+    color: var(--color-alert);
+}
+
+.box-alert-userType {
+    border-color: var(--color-alert-1);
+}
+

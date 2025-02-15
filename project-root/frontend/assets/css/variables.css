@@ -12,6 +12,9 @@
     --color-background-main: white;
     --color-background-support: #FCFAFA;
     --color-alert: rgb(189, 0, 0);
+    --color-alert-1: rgba(189, 0, 0, 0.417);
+    --color-alert-2: rgba(189, 0, 0, 0.564);
+    --color-alert-background: rgba(189, 0, 0, 0.165);
     --fonte-A: "Questrial", serif;
     --font-size-title: 2rem;
     --font-size-p: 1.7em;

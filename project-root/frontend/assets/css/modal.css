@@ -152,3 +152,35 @@
     justify-content: flex-end;
     padding: 10px;
 }
+
+/*Estilização de mensagens de erro*/
+
+/*Ícones de alerta*/
+.error-i{
+    display: none;
+    color: var(--color-alert-2);
+}
+
+/*Borda inferior de input do form*/
+.icon-and-placeholder-alert {
+    border-bottom: 2px solid var(--color-alert-1);
+}
+
+/*Alterando cor de ícones de formulario e texto do placeholder*/
+.input-login-alert::placeholder,
+.input-login-alert,
+.form-i-alert {
+    color: var(--color-alert-1);
+}
+
+/*Mensagens de alerta*/
+.alert-msg{
+    display: none;
+    color: var(--color-alert-2);
+    margin-top: 0.5em;
+}
+
+.alert-msg-signup{
+    color: var(--color-alert-2);
+    margin-left: 1em;
+}

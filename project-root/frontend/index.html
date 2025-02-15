@@ -142,40 +142,104 @@
                     <div class="area-logo-title">
                         <h1 id="title-section">CRIAR CONTA</h1>
                     </div>
-                    <form class="register-form" >
+                    <form id="signup-form" novalidate>
                         <!-- Informações Gerais -->
                         <fieldset>
                             <legend>Informações Gerais</legend>
+                            <!-- Nome -->
                             <div class="line-form">
-                                <label class="label-form" for="nome">Nome completo</label>
-                                <input class="box-form" type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                                <label id="label-nome" class="label-form" for="signup-nome">
+                                    Nome completo
+                                    <i class="bi bi-asterisk"></i>
+                                </label>
+                                <input class="box-form" type="text" id="signup-nome" name="nome" placeholder="Seu nome" required>
+                                <!-- Mensagens de alerta-->
+                                <span class="alert-msg alert-msg-signup" id="alert-msg-name-signup-1">
+                                    Por favor, informe seu nome.
+                                </span>
+                                <span class="alert-msg alert-msg-signup" id="alert-msg-name-signup-2">
+                                    Seu nome não pode conter caracteres especiais ou números, apenas letras.
+                                </span>
                             </div>
+                            <!-- Email -->
                             <div class="line-form">
-                                <label class="label-form" for="email">E-mail</label>
-                                <input class="box-form" type="email" id="email" name="email" placeholder="Insira seu email" required>
+                                <label id="label-email" class="label-form" for="signup-email">
+                                    E-mail
+                                    <i class="bi bi-asterisk"></i>
+                                </label>
+                                <input class="box-form" type="email" id="signup-email" name="email" placeholder="Insira seu email" required>
+                                <!-- Mensagens de alerta-->
+                                <span class="alert-msg alert-msg-signup" id="alert-msg-email-signup-1">
+                                    Por favor, informe seu email.
+                                </span>
+                                <span class="alert-msg alert-msg-signup" id="alert-msg-email-signup-2">
+                                    Por favor, informe um endereço de email válido.
+                                </span>
                             </div>
                             <div class="line-form-two-columns">
+                                <!-- Senha -->
                                 <div class="line-form">
-                                    <label class="label-form" for="senha">Senha</label>
-                                    <input class="box-form" type="password" id="senha" name="senha" placeholder="Crie uma senha" required>
+                                    <label id="label-senha" class="label-form" for="signup-senha">
+                                        Senha
+                                        <i class="bi bi-asterisk"></i>
+                                    </label>
+                                    <input class="box-form" type="password" id="signup-senha" name="senha" placeholder="Crie uma senha" required>
+                                    <!-- Mensagens de alerta-->
+                                    <span class="alert-msg alert-msg-signup" id="alert-msg-senha-signup">
+                                        Por favor, informe uma senha entre 6 e 15 caracteres.
+                                    </span>
                                 </div>
+                                <!-- Confirmação de senha -->
                                 <div class="line-form">
-                                    <label class="label-form" for="confirmar-senha">Confirmar Senha</label>
-                                    <input class="box-form" type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Repita a senha" required>
+                                    <label id="label-conf-senha" class="label-form" for="signup-conf-senha">
+                                        Confirmar Senha
+                                        <i class="bi bi-asterisk"></i>
+                                    </label>
+                                    <input class="box-form" type="password" id="signup-conf-senha" name="confirmar-senha" placeholder="Repita a senha" required>
+                                    <!-- Mensagens de alerta-->
+                                    <span class="alert-msg alert-msg-signup" id="alert-msg-conf-senha-signup-1">
+                                        Por favor, confirme sua senha.
+                                    </span>
+                                    <span class="alert-msg alert-msg-signup" id="alert-msg-conf-senha-signup-2">
+                                        As senhas não correspondem.
+                                    </span>
+                                    <span class="alert-msg alert-msg-signup" id="alert-msg-conf-senha-signup-3">
+                                        Por favor, informe uma senha antes de confirmar.
+                                    </span>
                                 </div>
                             </div>
                             <div class="line-form-two-columns">
+                                <!-- Telefone -->
                                 <div class="line-form">
-                                    <label class="label-form" for="telefone">Telefone:</label>
+                                    <label id="label-telefone" class="label-form" for="telefone">
+                                        Telefone:
+                                        <i class="bi bi-asterisk"></i>
+                                    </label>
                                     <input class="box-form" type="tel" id="telefone" name="telefone" placeholder="(__) _ ____-____">
+                                    <!-- Mensagens de alerta-->
+                                    <span class="alert-msg alert-msg-signup" id="alert-msg-telefone-signup-1">
+                                        Por favor, informe um número de telefone.
+                                    </span>
+                                    <span class="alert-msg alert-msg-signup" id="alert-msg-telefone-signup-2">
+                                        O telefone informado é inválido.<br>
+                                        Exemplo válido: 88 9 99999999
+                                    </span>
                                 </div>
+                                <!-- Tipo de usuário -->
                                 <div class="line-form"> 
-                                    <label class="label-form" for="register-type-user-select">Tipo de Usuário:</label>
+                                    <label id="label-user-type" class="label-form" for="register-type-user-select">
+                                        Tipo de Usuário:
+                                        <i class="bi bi-asterisk"></i>
+                                    </label>
                                     <select id="register-type-user-select" name="tipo-usuario" required>
-                                        <option value="" disabled selected>- Selecione -</option>
+                                        <option value="default" disabled selected>- Selecione -</option>
                                         <option value="locatario">Sou Estudante (Locatário)</option>
                                         <option value="locador">Sou Proprietário (Locador)</option>
                                     </select>
+                                    <!-- Mensagens de alerta-->
+                                    <span class="alert-msg alert-msg-signup" id="alert-msg-usuario-signup">
+                                        Por favor, informe o seu tipo de usuário.
+                                    </span>
                                 </div>
                             </div> 
                         </fieldset>
@@ -204,20 +268,20 @@
                             </div>
                         </fieldset>
                         <!-- Informações para Locador -->
-                        <fieldset id="locador-info" style="display: none;">
+                        <fieldset id="locador-info">
                             <legend>Informações para Locadores</legend>
                             <label class="label-form" for="empresa">Nome da Empresa (Opcional):</label>
                             <input class="box-form" type="text" id="empresa" name="empresa">
-    
-                            <label class="label-form" for="endereco">Endereço:</label>
-                            <input class="box-form" type="text" id="endereco" name="endereco">
                         </fieldset>
                         <!-- Aceitação de Termos -->
                         <fieldset>
                             <legend>Confirmação</legend>
                             <label class="confirm-checkbox">
-                                <input type="checkbox" name="termos" required>
+                                <input id="checkbox-terms" type="checkbox" name="termos" required>
                                 Eu concordo com os <a href="#">termos de uso</a> e a <a href="#">política de privacidade</a>.
+                                <span class="alert-msg alert-msg-signup" id="alert-msg-termos-signup">
+                                    Você precisa concordar com os termos para continuar.
+                                </span>
                             </label>
                         </fieldset>
                         <button id="button-register" type="submit">Continuar</button>
