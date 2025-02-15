@@ -22,18 +22,22 @@
 }
 
 /* Área de Formulário */
-.login-form {
+#login-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 5px;
-    padding: 2em 2em;
+    padding: 2em 20%;
 }
 
 .icon-and-placeholder {
+    display: grid;
+    grid-template-columns: 10% 75% 10%;
+    gap: 0.5em;
     border-bottom: 2px solid var(--color-C);
     padding: 20px 0 5px 0;
+    width: 100%;
 }
 
 .input-login {
@@ -50,7 +54,6 @@
 
 .form-i {
     font-size: 1.7em;
-    margin-right: 15px;
 }
 
 /* Área de 'Esqueceu a senha?' e Botão de Login */
@@ -58,6 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
     padding: 2em 0;
     gap: 5em;
 }
@@ -90,4 +94,31 @@
 #button-login-modal:hover {
     background-color: var(--color-H);
     transform: scale(1.1);
+}
+
+/*Estilização de mensagens de erro*/
+
+/*Ícones de alerta*/
+.error-i{
+    display: none;
+    color: var(--color-alert);
+}
+
+/*Borda inferior de input do form*/
+.icon-and-placeholder-alert {
+    border-bottom: 2px solid var(--color-alert);
+}
+
+/*Alterando cor de ícones de formulario e texto do placeholder*/
+.input-login-alert::placeholder,
+.input-login-alert,
+.form-i-alert {
+    color: var(--color-alert);
+}
+
+/*Mensagens de alerta*/
+.alert-msg{
+    display: none;
+    color: var(--color-alert);
+    margin-top: 0.5em;
 }

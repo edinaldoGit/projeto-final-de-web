@@ -111,15 +111,26 @@
                         <img src="assets/img/logo-icone-sem-fundo.png" alt="">
                         <h1 id="title-section">LOGIN</h1>
                     </div>
-                    <form class="login-form">
-                        <div class="icon-and-placeholder">
-                            <i class="bi bi-person-circle form-i"></i>
+                    <form id="login-form" novalidate method="POST">
+                        <div id="container-email" class="icon-and-placeholder">
+                            <i id="i-email" class="bi bi-person-circle form-i"></i>
                             <input class="input-login" type="email" id="login-email" placeholder="Email" required>
+                            <i id="alert-email-login" class="bi bi-exclamation-circle form-i error-i"></i>
                         </div>
-                        <div class="icon-and-placeholder">
-                            <i class="bi bi-key-fill form-i"></i>
+                        <span class="alert-msg" id="alert-msg-email-login-1">
+                            O Email não pode ser vazio.
+                        </span>
+                        <span class="alert-msg" id="alert-msg-email-login-2">
+                            Por favor, informe um endereço de email válido.
+                        </span>
+                        <div id="container-senha" class="icon-and-placeholder">
+                            <i id="i-senha" class="bi bi-key-fill form-i"></i>
                             <input class="input-login" type="password" id="login-senha" placeholder="Senha" required>
+                            <i id="alert-password-login" class="bi bi-exclamation-circle form-i error-i"></i>
                         </div>
+                        <span class="alert-msg" id="alert-msg-password-login">
+                            A senha não pode ser vazia.
+                        </span>
                         <div class="forgot-and-button-login">
                             <a id="link-forgot-password" href="#">Esqueceu a senha?</a>
                             <button type="submit" id="button-login-modal">Login</button>
@@ -131,7 +142,7 @@
                     <div class="area-logo-title">
                         <h1 id="title-section">CRIAR CONTA</h1>
                     </div>
-                    <form class="register-form">
+                    <form class="register-form" >
                         <!-- Informações Gerais -->
                         <fieldset>
                             <legend>Informações Gerais</legend>
@@ -159,7 +170,7 @@
                                     <input class="box-form" type="tel" id="telefone" name="telefone" placeholder="(__) _ ____-____">
                                 </div>
                                 <div class="line-form"> 
-                                    <label class="label-form" for="tipo-usuario">Tipo de Usuário:</label>
+                                    <label class="label-form" for="register-type-user-select">Tipo de Usuário:</label>
                                     <select id="register-type-user-select" name="tipo-usuario" required>
                                         <option value="" disabled selected>- Selecione -</option>
                                         <option value="locatario">Sou Estudante (Locatário)</option>
