@@ -9,7 +9,7 @@ Colocarei abaixo as imagens capturadas das telas para facilitar a visualização
 
 ## Tela de **Sobre nós**:
 
-Nessa seção nós temos 3 subceções: Missão, Visão e Valores, que detalha de forma breve e clara a finalidade do projeto e seus impactos. 
+Nessa seção nós temos 3 subseções: Missão, Visão e Valores, que detalha de forma breve e clara a finalidade do projeto e seus impactos. 
 
 ### Sobre nós - Tela 1
 ![Tela de Sobre nós](Imagens/tela-sobre-1.png)
@@ -20,7 +20,7 @@ Nessa seção nós temos 3 subceções: Missão, Visão e Valores, que detalha d
 
 ## Tela de **Suporte**:
 
-A seção de Suporte é dividida em 3 subceções: "Perguntas frequentes", "Fale conosco" e "Contato direto". Nessa seção foi implementado um menu que fica fixo na parte superior da seção. Nele, é possível navegar entres as subceções clicando nos seus respectivos links.
+A seção de Suporte é dividida em 3 subseções: "Perguntas frequentes", "Fale conosco" e "Contato direto". Nessa seção foi implementado um menu que fica fixo na parte superior da seção. Nele, é possível navegar entres as subceções clicando nos seus respectivos links.
 
 ### Suporte - Faqs 
 
