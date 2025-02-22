@@ -2,6 +2,11 @@
 @import url(reset.css);
 @import url(variables.css);
 
+#logo-footer{
+    width: 60px;
+    height: auto;
+}
+
 footer {
     position: relative;
     background-color: #002452;

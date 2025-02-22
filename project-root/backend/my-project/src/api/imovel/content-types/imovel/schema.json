@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "imoveis",
+  "info": {
+    "singularName": "imovel",
+    "pluralName": "imoveis",
+    "displayName": "Imóveis",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title_ad": {
+      "type": "string"
+    },
+    "description_ad": {
+      "type": "text"
+    },
+    "rent_Value": {
+      "type": "integer"
+    },
+    "neighborhood": {
+      "type": "string"
+    },
+    "cep": {
+      "type": "biginteger"
+    },
+    "location_latitude": {
+      "type": "decimal"
+    },
+    "location_longitude": {
+      "type": "decimal"
+    },
+    "gallery_ad": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

@@ -12,7 +12,7 @@ header {
 /* Logo */
 #logo-home-horizontal {
     margin-top: 0.5em;
-    width: 200px; 
+    width: 180px; 
     height: auto; 
 }
 
@@ -29,7 +29,7 @@ header {
 
 .nav-bar ul {
     display: grid;
-    grid-template-columns: auto 2px auto 2px auto 2px auto auto;
+    grid-template-columns: auto 2px auto 2px auto 2px auto auto auto;
     align-items: center;
     gap: 0;
     width: 100%;
@@ -49,7 +49,7 @@ header {
     color: var(--color-A);
     cursor: pointer;
     background-color: transparent;
-    font-size: 1em;
+    font-size: 0.9em;
     font-family: "Questrial", serif;
     align-content: center;
     height: 100%;
@@ -72,7 +72,7 @@ header {
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1em;
+    font-size: 0.9em;
     font-family: "Questrial", serif;
     background-color: var(--color-A);
     border-radius: 2em;
@@ -80,10 +80,55 @@ header {
     padding: 0.5em;
     width: 80%;
     height: 80%;
+    cursor: pointer;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 #button-login:hover {
+    background-color: #0047a5e7;
+    transform: scale(1.1);
+}
+
+/* Botão de sair da conta */
+#button-logout {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    font-family: "Questrial", serif;
+    background-color: var(--color-B);
+    border-radius: 2em 0 0 2em;
+    border: none;
+    padding: 0.5em;
+    width: 50%;
+    height: 80%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#button-logout:hover {
+    transform: scale(1.1);
+}
+
+/* Botão de Perfil de usuário */
+#button-profile {
+    display: none;
+    align-items: center;
+    justify-content: left;
+    color: white;
+    font-size: 0.9em;
+    font-family: "Questrial", serif;
+    background-color: var(--color-A);
+    border-radius: 0 2em 2em 0;
+    border: none;
+    padding: 0.5em;
+    width: 80%;
+    height: 80%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#button-profile:hover {
     background-color: #0047a5e7;
     transform: scale(1.1);
 }
@@ -93,6 +138,17 @@ header {
     font-size: 1.2em;
     color: var(--color-B);
     margin-left: 0.5em;
+}
+
+/* Ícone do botão de sair da conta */
+.bi-box-arrow-left {
+    font-size: 1.2em;
+    color: var(--color-A);
+}
+
+/* Ícone do botão de perfil*/
+.bi-person-fill{
+    margin-right: 0.5em;
 }
 
 /* Indicador horizontal */
@@ -105,4 +161,14 @@ header {
     left: 0;
     border-radius: 1em; 
     transition: all 0.5s ease;
+}
+
+/*Ajustando container dos botões de login/logout*/
+#area-button-login-logout{
+    justify-content: right;
+}
+
+/*Ajustando container do botão de perfil do usuário*/
+#area-button-profile{
+    justify-content: left;
 }

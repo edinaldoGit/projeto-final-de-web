@@ -1,59 +1,124 @@
-<h1>olá, aqui é a Home</h1>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, quisquam! Impedit vitae dolores, exercitationem ratione fuga vero iure reprehenderit perspiciatis quas necessitatibus possimus ut! Et laborum illum perspiciatis sed dolore?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, quaerat omnis sunt nobis consequuntur quia nemo eos vel amet ab deserunt quis quos laudantium corrupti rem. Suscipit aliquid molestiae soluta.lor Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti accusamus vel esse neque accusantium ipsam dicta reprehenderit porro, quaerat aut quod hic, nam blanditiis exercitationem quasi adipisci eum minus cumque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatum nesciunt, dolore autem dolores nemo consequatur voluptatibus in non repellat, aperiam aspernatur exercitationem placeat quia suscipit fuga quaerat commodi odio!Lorem
+<div id="home-page">
+    <div id="header-sec">
+        <div id="column-point-bus" class="column-header-sec">
+            
+            <div id="cont-buttons-bus-point">
+                <!--Rodoviária-->
+                <button id="list-ad-point-1" class="point-bus-button">Rodoviária</button>
+                <!--RAndré Car Veículos-->
+                <button id="list-ad-point-2" class="point-bus-button">Res. F. Menezes</button>
+                <!--Construtec-->
+                <button id="list-ad-point-3" class="point-bus-button">Construtec</button>
+                <!--Shalom-->
+                <button id="list-ad-point-4" class="point-bus-button">Shalom</button>
+            </div>
+        </div>
+        <div id="column-search-ad" class="column-header-sec">
+            
+            <div id="container-search-ad">
+                <input type="text" id="search-ad" placeholder="Buscar imóvel...">
+                <i id="icon-search-ad" class="bi bi-search"></i>
+            </div>
+        </div>
+        <div class="column-header-sec">
+            
+            <div id="cont-buttons-estrategic-point">
+                <div class="estrategic-point-op" id="Universidade">
+                    <button class="menu-points-btn">Universidade</button>
+                    <div class="point-op-content">
+                        <a href="#">Opção 1</a>
+                        <a href="#">Opção 2</a>
+                        <a href="#">Opção 3</a>
+                    </div>
+                </div>
+                <div class="estrategic-point-op" id="drogarias">
+                    <button class="menu-points-btn" id="button-farmacia">Drogaria</button>
+                    <div class="point-op-content">
+                        <a href="#">Opção 1</a>
+                        <a href="#">Opção 2</a>
+                        <a href="#">Opção 3</a>
+                    </div>
+                </div>
+                <div class="estrategic-point-op" id="mercados">
+                    <button class="menu-points-btn" id="button-mercado">Supermercado</button>
+                    <div class="point-op-content">
+                        <a href="#">Opção 1</a>
+                        <a href="#">Opção 2</a>
+                        <a href="#">Opção 3</a>
+                    </div>
+                </div>
+                <div class="estrategic-point-op" id="academias">
+                    <button class="menu-points-btn" id="button-academia">Academia</button>
+                    <div class="point-op-content">
+                        <a href="#">Opção 1</a>
+                        <a href="#">Opção 2</a>
+                        <a href="#">Opção 3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <section id="ad-grid"></section>
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quas delectus ipsa error officia ex, saepe provident iure excepturi, debitis facere sit exercitationem itaque vitae, mollitia rem dolor numquam sunt. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis iusto doloremque repellendus omnis quidem, impedit ducimus, vero est illo pariatur asperiores! Illum nobis magni rerum unde distinctio, suscipit a quisquam. 
+    <button id="btn-anunciar">Anunciar imóvel</button>
 
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, accusantium quo obcaecati ratione numquam repellat porro, molestias, ut amet voluptas maiores corrupti aliquid minus unde atque nostrum quisquam. Eum, autem.</p>
+    <div id="modal-ad-card" role="dialog" aria-modal="true">
+        <div id="modal-content-ad-card">
+            <div id="content-ad-card">
+                <div class="gallery">
+                    <img src="assets/img/anuncio-1/img-1.jpg" alt="Imagem 1" class="gallery-image active-img-gallery">
+                    <img src="assets/img/anuncio-1/img-2.jpg" alt="Imagem 2" class="gallery-image">
+                    <img src="assets/img/anuncio-1/img-3.jpg" alt="Imagem 3" class="gallery-image">
+                    <img src="assets/img/anuncio-1/img-4.jpg" alt="Imagem 4" class="gallery-image">
+                    <div class="controls">
+                        <button id="prevBtn" class="bttn-gallery">
+                            <i class="bi bi-caret-left-fill"></i>
+                        </button>
+                        <button id="nextBtn" class="bttn-gallery">
+                            <i class="bi bi-caret-right-fill"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="description-ad">
+                    <button id="bttn-close-modal-ad-card" aria-label="Fechar">
+                        <span class="icon-default">
+                            <i class="bi bi-x-circle"></i>
+                        </span>
+                        <span class="icon-hover">
+                            <i class="bi bi-x-circle-fill"></i>
+                        </span>
+                    </button>
+                    <div id="description-ad-text">
+                        <h1 id="title-modal-ad-card">Apartamento aconchegante próximo à universidade</h1>
+                        <p>
+                            <span id="description-property">Ótima oportunidade para estudantes! Este apartamento de 2 quartos está localizado a apenas 5 minutos de um ponto de ônibus que leva direto à universidade. Possui uma sala espaçosa, cozinha equipada e banheiro moderno. O imóvel conta com internet inclusa, além de segurança 24h e uma lavanderia compartilhada.</span>
+                        </p>
 
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod corrupti fugiat fugit est ut expedita delectus inventore ipsa similique officia. Quia velit libero molestias maiores minima sunt illum dicta illo.</p>
+                        <p>
+                            <i class="bi bi-cash-coin"></i>
+                            <strong>Aluguel: </strong> R$ 
+                            <span id="description-ad-rent-value"></span>
+                            por mês.
+                        </p>
+                        <p>
+                            <i class="bi bi-geo-alt"></i>
+                            <strong>Localização: </strong>
+                            <span id="description-ad-rent-location"></span>
+                        </p>
+                        <p>
+                            <i class="bi bi-hourglass-split"></i>
+                            <strong>Tempo de contrato: </strong>
+                            <span id="description-ad-rent-location"></span>
+                             meses. 
+                        </p>
 
-<h1>olá, aqui é a Home</h1>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, quisquam! Impedit vitae dolores, exercitationem ratione fuga vero iure reprehenderit perspiciatis quas necessitatibus possimus ut! Et laborum illum perspiciatis sed dolore?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, quaerat omnis sunt nobis consequuntur quia nemo eos vel amet ab deserunt quis quos laudantium corrupti rem. Suscipit aliquid molestiae soluta.lor Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti accusamus vel esse neque accusantium ipsam dicta reprehenderit porro, quaerat aut quod hic, nam blanditiis exercitationem quasi adipisci eum minus cumque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatum nesciunt, dolore autem dolores nemo consequatur voluptatibus in non repellat, aperiam aspernatur exercitationem placeat quia suscipit fuga quaerat commodi odio!Lorem
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quas delectus ipsa error officia ex, saepe provident iure excepturi, debitis facere sit exercitationem itaque vitae, mollitia rem dolor numquam sunt. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis iusto doloremque repellendus omnis quidem, impedit ducimus, vero est illo pariatur asperiores! Illum nobis magni rerum unde distinctio, suscipit a quisquam. 
-
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, accusantium quo obcaecati ratione numquam repellat porro, molestias, ut amet voluptas maiores corrupti aliquid minus unde atque nostrum quisquam. Eum, autem.</p>
-
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod corrupti fugiat fugit est ut expedita delectus inventore ipsa similique officia. Quia velit libero molestias maiores minima sunt illum dicta illo.</p> 
-
-<h1>olá, aqui é a Home</h1>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, quisquam! Impedit vitae dolores, exercitationem ratione fuga vero iure reprehenderit perspiciatis quas necessitatibus possimus ut! Et laborum illum perspiciatis sed dolore?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, quaerat omnis sunt nobis consequuntur quia nemo eos vel amet ab deserunt quis quos laudantium corrupti rem. Suscipit aliquid molestiae soluta.lor Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti accusamus vel esse neque accusantium ipsam dicta reprehenderit porro, quaerat aut quod hic, nam blanditiis exercitationem quasi adipisci eum minus cumque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatum nesciunt, dolore autem dolores nemo consequatur voluptatibus in non repellat, aperiam aspernatur exercitationem placeat quia suscipit fuga quaerat commodi odio!Lorem
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quas delectus ipsa error officia ex, saepe provident iure excepturi, debitis facere sit exercitationem itaque vitae, mollitia rem dolor numquam sunt. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis iusto doloremque repellendus omnis quidem, impedit ducimus, vero est illo pariatur asperiores! Illum nobis magni rerum unde distinctio, suscipit a quisquam. 
-
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, accusantium quo obcaecati ratione numquam repellat porro, molestias, ut amet voluptas maiores corrupti aliquid minus unde atque nostrum quisquam. Eum, autem.</p>
-
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod corrupti fugiat fugit est ut expedita delectus inventore ipsa similique officia. Quia velit libero molestias maiores minima sunt illum dicta illo.</p>
-
-<h1>olá, aqui é a Home</h1>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, quisquam! Impedit vitae dolores, exercitationem ratione fuga vero iure reprehenderit perspiciatis quas necessitatibus possimus ut! Et laborum illum perspiciatis sed dolore?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, quaerat omnis sunt nobis consequuntur quia nemo eos vel amet ab deserunt quis quos laudantium corrupti rem. Suscipit aliquid molestiae soluta.lor Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti accusamus vel esse neque accusantium ipsam dicta reprehenderit porro, quaerat aut quod hic, nam blanditiis exercitationem quasi adipisci eum minus cumque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatum nesciunt, dolore autem dolores nemo consequatur voluptatibus in non repellat, aperiam aspernatur exercitationem placeat quia suscipit fuga quaerat commodi odio!Lorem
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quas delectus ipsa error officia ex, saepe provident iure excepturi, debitis facere sit exercitationem itaque vitae, mollitia rem dolor numquam sunt. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis iusto doloremque repellendus omnis quidem, impedit ducimus, vero est illo pariatur asperiores! Illum nobis magni rerum unde distinctio, suscipit a quisquam. 
-
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, accusantium quo obcaecati ratione numquam repellat porro, molestias, ut amet voluptas maiores corrupti aliquid minus unde atque nostrum quisquam. Eum, autem.</p>
-
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod corrupti fugiat fugit est ut expedita delectus inventore ipsa similique officia. Quia velit libero molestias maiores minima sunt illum dicta illo.</p>
-
-<h1>olá, aqui é a Home</h1>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, quisquam! Impedit vitae dolores, exercitationem ratione fuga vero iure reprehenderit perspiciatis quas necessitatibus possimus ut! Et laborum illum perspiciatis sed dolore?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, quaerat omnis sunt nobis consequuntur quia nemo eos vel amet ab deserunt quis quos laudantium corrupti rem. Suscipit aliquid molestiae soluta.lor Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti accusamus vel esse neque accusantium ipsam dicta reprehenderit porro, quaerat aut quod hic, nam blanditiis exercitationem quasi adipisci eum minus cumque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatum nesciunt, dolore autem dolores nemo consequatur voluptatibus in non repellat, aperiam aspernatur exercitationem placeat quia suscipit fuga quaerat commodi odio!Lorem
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quas delectus ipsa error officia ex, saepe provident iure excepturi, debitis facere sit exercitationem itaque vitae, mollitia rem dolor numquam sunt. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis iusto doloremque repellendus omnis quidem, impedit ducimus, vero est illo pariatur asperiores! Illum nobis magni rerum unde distinctio, suscipit a quisquam. 
-
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, accusantium quo obcaecati ratione numquam repellat porro, molestias, ut amet voluptas maiores corrupti aliquid minus unde atque nostrum quisquam. Eum, autem.</p>
-
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod corrupti fugiat fugit est ut expedita delectus inventore ipsa similique officia. Quia velit libero molestias maiores minima sunt illum dicta illo.</p>
-
-<h1>olá, aqui é a Home</h1>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, quisquam! Impedit vitae dolores, exercitationem ratione fuga vero iure reprehenderit perspiciatis quas necessitatibus possimus ut! Et laborum illum perspiciatis sed dolore?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, quaerat omnis sunt nobis consequuntur quia nemo eos vel amet ab deserunt quis quos laudantium corrupti rem. Suscipit aliquid molestiae soluta.lor Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti accusamus vel esse neque accusantium ipsam dicta reprehenderit porro, quaerat aut quod hic, nam blanditiis exercitationem quasi adipisci eum minus cumque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatum nesciunt, dolore autem dolores nemo consequatur voluptatibus in non repellat, aperiam aspernatur exercitationem placeat quia suscipit fuga quaerat commodi odio!Lorem
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quas delectus ipsa error officia ex, saepe provident iure excepturi, debitis facere sit exercitationem itaque vitae, mollitia rem dolor numquam sunt. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis iusto doloremque repellendus omnis quidem, impedit ducimus, vero est illo pariatur asperiores! Illum nobis magni rerum unde distinctio, suscipit a quisquam. 
-
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, accusantium quo obcaecati ratione numquam repellat porro, molestias, ut amet voluptas maiores corrupti aliquid minus unde atque nostrum quisquam. Eum, autem.</p>
-
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod corrupti fugiat fugit est ut expedita delectus inventore ipsa similique officia. Quia velit libero molestias maiores minima sunt illum dicta illo.</p>
+                        <p>Ficou interessado? entre em contato com o proprietário clicando no botão abaixo: </p>
+                        <button id="contact-owner">Entrar em contato</button>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+</div>

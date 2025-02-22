@@ -12,18 +12,23 @@
     gap: 20px;
 }
 
-.area-logo-title img {
+#img-logo-icon-login-modal {
     width: 200px;
     height: 140px;
 }
 
-#title-section {
+.title-section {
+    display: flex;
     color: var(--color-A);
+}
+
+#title-login-section{
+    display: flex;
 }
 
 /* Área de Formulário */
 #login-form {
-    display: flex;
+    display: flex; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -94,4 +99,47 @@
 #button-login-modal:hover {
     background-color: var(--color-H);
     transform: scale(1.1);
+}
+
+/*Mensagem de sucesso ao fazer LOGIN*/
+#result-login-success{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8em 2em 2em 2em;
+    gap: 1em;
+    color: var(--color-A);
+}
+
+#icon-login-sucess{
+    color: var(--color-A);
+    font-size: 6em;
+}
+
+#result-login-success h1{
+    font-size: 2.5em;
+    color: var(--color-A);
+}
+
+#msg-welcome-user{
+    font-size: 1.3em;
+}
+
+#msg-redirect-to-home-page{
+    font-size: 1.3em;
+    background-color: var(--color-E);
+    border-radius: 1em;
+    padding: 1em;
+    margin-top: 5em;
+}
+
+/*Mensagem de Erro ao fazer LOGIN*/
+#result-login-error{
+    display: none;
+    font-size: 1em;
+    color:  var( --color-alert);
+    background-color: var(--color-alert-background2);
+    padding: 0.3em;
+    border-radius: 0.5em;
 }

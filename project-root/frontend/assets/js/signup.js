@@ -77,6 +77,7 @@ function cleanAlertsSignup(camp){
     alertMsgCheckboxTermsSig.style.display = 'none';
   }
 }
+
 //Verifica se o email é valido
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -321,5 +322,38 @@ typeUserSignup.addEventListener('change', function () {
   } else {
       document.getElementById('locador-info').style.display = 'none';
       document.getElementById('locatario-info').style.display = 'flex';
+  }
+});
+
+
+
+// Criando um novo usuário (cadastro)
+signupForm.addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const userData = {
+    nameUser: nomeSignup.value,
+    username: emailSignup.value,
+    email: emailSignup.value,
+    password: senhaSignup.value,
+    telephone: telefoneSignup.value,  
+  };
+
+  try {
+    const response = await axios.post(
+      "http://localhost:1337/api/auth/local/register",
+      userData
+    );
+
+    alert("Usuário cadastrado com sucesso!");
+    console.log(response.data);
+  } catch (error) {
+    // Tratamento de erros aprimorado
+    const errorMessage = error.response?.data?.error?.message 
+      || error.message 
+      || "Erro desconhecido ao cadastrar";
+    
+    console.error("Erro ao cadastrar usuário:", errorMessage);
+    alert("Erro ao cadastrar: " + errorMessage);
   }
 });

@@ -7,14 +7,18 @@
     --color-F: rgb(16, 63, 125);
     --color-G: #ffc061;
     --color-H: #2656a3;
+    --color-I: #dce4f1;
+    --color-J: #e5ebf6;
     --color-background-form: #d4e0f4;
     --color-background-modal: #011127cb;
+    --color-background-modal-1: #010c1891;
     --color-background-main: white;
     --color-background-support: #FCFAFA;
     --color-alert: rgb(189, 0, 0);
     --color-alert-1: rgba(189, 0, 0, 0.417);
     --color-alert-2: rgba(189, 0, 0, 0.564);
     --color-alert-background: rgba(189, 0, 0, 0.165);
+    --color-alert-background2: rgba(189, 0, 0, 0.064);
     --fonte-A: "Questrial", serif;
     --font-size-title: 2rem;
     --font-size-p: 1.7em;
