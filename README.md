@@ -80,11 +80,17 @@ Liste as principais entidades do sistema.
 
 **Frontend:**
 
-Lista as tecnologias, frameworks e bibliotecas utilizados.
+**Tecnologias e Bibliotecas Utilizadas:**
+
+- **Frontend:**
+  - HTML
+  - CSS
+  - JavaScript
+  - Bootstrap (apenas para utilização de emojis)
 
 **Backend:**
+- Strapi
 
-Lista as tecnologias, frameworks e bibliotecas utilizados.
 
 
 ## :shipit: Operações implementadas para cada entidade da aplicação
@@ -92,9 +98,9 @@ Lista as tecnologias, frameworks e bibliotecas utilizados.
 
 | Entidade| Criação | Leitura | Atualização | Remoção |
 | --- | --- | --- | --- | --- |
-| Entidade 1 | X |  X  |  | X |
-| Entidade 2 | X |    |  X | X |
-| Entidade 3 | X |    |  |  |
+| Imóvel | X |  X  | X | X |
+| Usuário | X |  X  |  X | X |
+| Categorias|  |    |  |  |
 
 > Lembre-se que é necessário implementar o CRUD de pelo menos duas entidades.
 
@@ -102,5 +108,9 @@ Lista as tecnologias, frameworks e bibliotecas utilizados.
 
 | Método HTTP | URL |
 | --- | --- |
-| GET | api/entidade1/|
-| POST | api/entidade2 |
+| GET | /api/users/|
+| POST | /api/users/ |
+| DELETE | /api/usuarios/:id |
+| GET | /api/imoveis/|
+| POST |	/api/imoveis/|
+| DELETE |/api/imoveis/:id|
