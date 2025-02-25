@@ -1,0 +1,65 @@
+<section id="anunciar-imovel" class="anunciar-imovel">
+    <h2 id="title-sec-anunciar">Anuncie seu Imóvel</h2>
+    <p>Divulgue seu imóvel para estudantes universitários de Quixadá. Preencha os dados abaixo e facilite o contato com futuros inquilinos.</p>
+
+    <form id="ad-form" action="" method="POST" class="form-anuncio">
+        <div class="campo">
+            <label for="titulo">Título do Anúncio *</label>
+            <input type="text" id="titulo-ad" name="titulo" required placeholder="Ex: Kitnet próxima à UFC">
+        </div>
+
+        <div class="campo">
+            <label for="descricao-ad">Descrição *</label>
+            <textarea id="descricao-ad" name="descricao-ad" rows="5" required placeholder="Descreva detalhes do imóvel, como número de quartos, mobiliado ou não, etc."></textarea>
+        </div>
+
+        <div class="campo">
+            <label for="preco">Valor do Aluguel (R$) *</label>
+            <input type="number" id="valor-aluguel" name="preco" required min="100" max="1000" placeholder="Ex: 800">
+        </div>
+
+        <div class="campo">
+            <label for="duracao-contrato">Tempo de contrato (meses) *</label>
+            <input type="number" id="duracao-contrato" name="dur-contrato" required min="5" max="20" placeholder="Ex: 12">
+        </div>
+
+        <div class="campo">
+            <label for="localizacao">Localização *</label>
+
+            <input type="text" id="localizacao-ad" name="localizacao" required placeholder="Ex: Rua José de Alencar, Centro">
+
+            <input type="hidden" id="latitude" name="latitude">
+            <input type="hidden" id="longitude" name="longitude">
+
+            <div id="mapa-anunciar" style="height: 300px; width: 100%; margin-top: 10px;"></div>
+            <span>Por favor, marque no mapa o local exato do imóvel</span>
+        </div>
+
+        <div class="campo">
+            <label for="contato">Telefone ou WhatsApp *</label>
+            <input type="tel" id="contato" name="contato" required placeholder="Ex: (88) 91234-5678">
+        </div>
+
+        <div class="campo">
+            <label for="select-album">Fotos do Imóvel *</label>
+            <div id="area-to-send-album">
+                <input type="file" id="select-album" name="imagem" accept="image/*" multiple style="display: none;">
+                <label for="select-album" class="botao-imagem">Selecionar Imagens</label>
+                <span id="nome-arquivo">Nenhum arquivo selecionado</span>
+            </div>
+        </div>
+        <div class="campo">
+            <button type="submit" class="botao-anunciar">Enviar Anúncio</button>
+        </div>
+    </form>
+    <dialog class="erroDialogClass" id="erroDialogAnunciar">
+        <h2><i class="bi bi-x-circle-fill"></i></h2>
+        <p id="mensagemErroAnunciar"></p>
+        <button id="btn-close-dialog-msg-error-anunciar">Fechar</button>
+    </dialog>
+    <dialog class="successDialogClass" id="successDialogAnunciar">
+        <h2><i class="bi bi-check-circle-fill"></i></h2>
+        <p id="mensagemSuccessAnunciar"></p>
+        <button id="btn-close-dialog-msg-success-anunciar">Fechar</button>
+    </dialog>
+</section>

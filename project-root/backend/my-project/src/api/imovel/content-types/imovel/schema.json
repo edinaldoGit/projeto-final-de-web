@@ -11,37 +11,41 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "title_ad": {
+    "titleAd": {
       "type": "string"
     },
-    "description_ad": {
+    "descriptionAd": {
       "type": "text"
     },
-    "rent_Value": {
+    "rentValue": {
       "type": "integer"
     },
     "neighborhood": {
       "type": "string"
     },
-    "cep": {
-      "type": "biginteger"
-    },
-    "location_latitude": {
+    "latitude": {
       "type": "decimal"
     },
-    "location_longitude": {
+    "longitude": {
       "type": "decimal"
     },
-    "gallery_ad": {
+    "galleryAd": {
       "type": "media",
       "multiple": true,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
-        "videos",
-        "audios"
+        "videos"
       ]
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "contractTime": {
+      "type": "integer"
     }
   }
 }

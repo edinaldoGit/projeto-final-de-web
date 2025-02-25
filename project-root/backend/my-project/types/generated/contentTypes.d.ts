@@ -381,30 +381,32 @@ export interface ApiImovelImovel extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    cep: Schema.Attribute.BigInteger;
+    contractTime: Schema.Attribute.Integer;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description_ad: Schema.Attribute.Text;
-    gallery_ad: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    descriptionAd: Schema.Attribute.Text;
+    galleryAd: Schema.Attribute.Media<'images' | 'files' | 'videos', true> &
+      Schema.Attribute.Required;
+    latitude: Schema.Attribute.Decimal;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::imovel.imovel'
     > &
       Schema.Attribute.Private;
-    location_latitude: Schema.Attribute.Decimal;
-    location_longitude: Schema.Attribute.Decimal;
+    longitude: Schema.Attribute.Decimal;
     neighborhood: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    rent_Value: Schema.Attribute.Integer;
-    title_ad: Schema.Attribute.String;
+    rentValue: Schema.Attribute.Integer;
+    titleAd: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    user: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
   };
 }
 
@@ -876,6 +878,7 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
+    imoveis: Schema.Attribute.Relation<'oneToMany', 'api::imovel.imovel'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -888,6 +891,9 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
+    pictureProfile: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     provider: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     resetPasswordToken: Schema.Attribute.String & Schema.Attribute.Private;

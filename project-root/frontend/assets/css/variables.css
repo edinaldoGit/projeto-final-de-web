@@ -9,6 +9,9 @@
     --color-H: #2656a3;
     --color-I: #dce4f1;
     --color-J: #e5ebf6;
+    --color-K: #9cafcb;
+    --color-L: #00559636;
+    --color-M: #c7d8f7;
     --color-background-form: #d4e0f4;
     --color-background-modal: #011127cb;
     --color-background-modal-1: #010c1891;
@@ -19,6 +22,10 @@
     --color-alert-2: rgba(189, 0, 0, 0.564);
     --color-alert-background: rgba(189, 0, 0, 0.165);
     --color-alert-background2: rgba(189, 0, 0, 0.064);
+    --color-background-1: #093a8817;
+    --color-green-1: #0097b2;
+    --color-green-2: #04798e;
+    --color-green-background1: #00a9c742;
     --fonte-A: "Questrial", serif;
     --font-size-title: 2rem;
     --font-size-p: 1.7em;

@@ -1,0 +1,492 @@
+@import url('variables.css');
+
+/*Seção do perfil de usuários (Administrador, Locador e Locatário)*/
+#user-profile {
+    display: grid;
+    grid-template-columns: 23% 70%;
+    gap: 2em;
+    background-color: var(--color-M);
+    width: 100%;
+    height: 55em;
+}
+ 
+/* Barra de navegação lateral*/
+#nav-bar-sec-profile{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-A);
+    width: 100%;
+    padding: 2em 1em 1em 6em;
+}
+
+#nav-bar-sec-profile ul{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    gap: 2em;
+    width: 100%;
+}
+
+/*Botôes da barra de navegação*/
+#nav-bar-sec-profile button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.4em;
+    font-family: "Questrial", serif;
+    background-color: transparent;
+    border-radius: 1.5em;
+    border: none;
+    padding: 0.5em 0.8em;
+    cursor: pointer;
+    width: auto;
+    justify-content: left;
+    margin: 0.5em;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#nav-bar-sec-profile button:hover {
+    background-color: rgba(255, 255, 255, 0.144);
+    transform: scale(1.1);
+}
+
+
+/*Ícones da barra de navegação */
+.sec-profile-bar{
+    margin-right: 1em;
+}
+
+/*SEÇÕES DE PERFIL ----------------------------------------------------*/
+.sec-profile-op h1{
+    color: var(--color-A);
+    background-color: white;
+    padding: 1.5em;
+    font-family: var(--fonte-A);
+    border-radius: 0 0 1em 1em;
+    font-size: 1.7em;
+}
+
+/*Seção de Dados Pessoais===============================================*/
+#personal-data-sec{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+/*Contâiner geral do conteúdo ==========================================*/
+.data-container{
+    display: grid;
+    background-color: white;
+    border-radius: 1em;
+    height: 30em;
+    align-items: center;
+    padding: 2em;
+    justify-content: center;
+}
+
+
+
+/*Foto e descrição-----------------------------------------------------*/
+/*Container*/
+#data-profile-container{
+    grid-template-columns: 40% 50% 10%;
+}
+
+/*Foto de perfil e botão de editar a foto */
+/*Contâiner*/
+#prof-pic-and-butt-edit-prof-pic{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 1em;
+    align-items: center;
+}
+
+/*Foto*/
+#pic-profile-user-sec-profile {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    object-position: center; 
+    overflow: hidden; 
+}
+
+/*Botão*/
+#button-edit-prof-pic-sec-profile{
+    display: flex;
+    color: var(--color-A);
+    font-size: 1.3em;
+    font-family: "Questrial", serif;
+    background-color: var(--color-L);
+    border-radius: 1.5em;
+    border: none;
+    padding: 0.5em 0.8em;
+    cursor: pointer;
+    width: 10em;
+    justify-content: center;
+    margin: 0.5em;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#button-edit-prof-pic-sec-profile:hover{
+    color: white;
+    background-color: var(--color-A);
+}
+
+/*Descrição do perfil--------------------------------------------------*/
+#description-prof-user-sec-profile{
+    display: flex; 
+    flex-direction: column;
+    font-family: var(--fonte-A);
+    font-size: 1.5em;
+    gap: 1em;
+    width: 100%;
+    color: var(--color-A);
+}
+
+/*Botões de editar e fechar seção de informações pessoais--------------*/
+#area-bttn-edit-and-close-prof-description{
+    display: flex; 
+    justify-content: flex-end;
+}
+
+/*Botão de editar informações pessoais */
+#button-edit-prof-description{
+    display: flex; 
+    font-size: 2em;
+    color: var(--color-A);
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 0.5em;
+    margin-right: 2em;
+    border: 2px solid var(--color-I);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#button-edit-prof-description:hover{
+    color: white;
+    background-color: var(--color-A);
+    transform: scale(1.1);
+}
+
+/*Botão de fechar seção de editar informações pessoais*/
+#button-close-edit-prof-description{
+    display: none; 
+    font-size: 2em;
+    color: var(--color-A);
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 0.5em;
+    margin-right: 1em;
+    border: 2px solid var(--color-I);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#button-close-edit-prof-description:hover{
+    color: white;
+    background-color: var(--color-A);
+    transform: scale(1.1);
+}
+
+/*Formulário de editar perfil-----------------------------------------*/
+#profile-edit-form{
+    display: none;
+    flex-direction: column;
+    font-family: var(--fonte-A);
+    gap: 2em;
+}
+
+#profile-edit-form div{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4em;
+    color: var(--color-A);
+}
+
+#profile-edit-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#profile-edit-form input,
+#profile-edit-form select {
+    color: var(--color-C);
+    font-size: 1em;
+    width: 100%;
+    border: 2px solid var(--color-L);
+    border-radius: 0.5em;
+    box-sizing: border-box;
+    padding: 0.5em;
+}
+
+#profile-edit-form input:focus,
+#profile-edit-form select:focus {
+    outline-color: var(--color-A);
+    color: var(--color-A);
+}
+
+/*Botão de enviar formulário de atualizar informações pessoais*/
+#button-save-edit-profile{
+    display: flex;
+    color: var(--color-A);
+    font-size: 1em;
+    font-family: "Questrial", serif;
+    background-color: var(--color-L);
+    border-radius: 1.5em;
+    border: none;
+    padding: 0.5em 0.8em;
+    cursor: pointer;
+    width: 10em;
+    justify-content: center;
+    align-self: center;
+    margin: 0.5em;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#button-save-edit-profile:hover{
+    color: white;
+    background-color: var(--color-A);
+    transform: scale(1.1);
+}
+
+/*Seção de Configurar Conta (Excluir ou Mudar senha)====================*/
+#data-config-account-container{
+    grid-template-columns: 35% 65% ;
+}
+
+#config-account-sec {
+    display: none;
+    flex-direction: column;
+    gap: 2em;
+    color: var(--color-A);
+    font-family: var(--fonte-A);
+}
+
+/*Conâiner geral de mudar senha e deletar conta */
+#column-change-password-and-delete-account{
+    display: grid;
+    grid-template-columns: 40% 2px 50%;
+    gap: 3em;
+}
+
+.change-password-and-delete-account {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-A);
+    gap: 1em;
+}
+
+#change-password-form h2,
+.delete-account h2 {
+    font-size: 2em;
+}
+
+#change-password-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+/*Subsessão de deletar conta*/
+.delete-account{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 0 2em;
+}
+
+.delete-account p{
+    text-align: justify;
+    font-size: 1.3em;
+    padding-right: 3em;
+}
+
+/*Formulário de editar senha*/
+.input-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input,
+.input-group select {
+    color: var(--color-C);
+    font-size: 1.2em;
+    width: 100%;
+    border: 2px solid var(--color-L);
+    border-radius: 0.5em;
+    box-sizing: border-box;
+    padding: 0.5em;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline-color: var(--color-A);
+}
+
+.input-group input::placeholder,
+.input-group select::placeholder {
+    color: var(--color-L);
+}
+
+/*Botão de enviar alteração de senha e botão de excluir conta*/
+#btn-update-password,
+#delete-account-button{
+    display: flex;
+    color: var(--color-A);
+    font-size: 1.3em;
+    font-family: var(--fonte-A);
+    background-color: var(--color-L);
+    border-radius: 1.5em;
+    border: none;
+    padding: 0.5em 0.8em;
+    cursor: pointer;
+    width: 100%;
+    justify-content: center;
+    margin-top: auto;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#btn-update-password:hover,
+#delete-account-button:hover{
+    color: white;
+    background-color: var(--color-A);
+    transform: scale(1.1);
+}
+
+/*Elemento visual que separa as seções*/
+.separador-sec {
+    background-color: var(--color-A);
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        var(--color-L),
+        rgba(0, 0, 0, 0)
+    );
+}
+
+/*Seção que lista os imóveis de um usuário (LOCADOR)===================*/
+#my-ad-sec-container{
+    display: flex;
+    flex-wrap: wrap;
+    height: 45em;
+    gap: 2em;
+    justify-content: left;
+    max-height: 45em; 
+    overflow-y: auto;
+    padding-right: 0.9em;
+}
+
+/*Estilização de cards de exibição dos imóveis*/
+.imovel-item{
+    display: grid;
+    grid-template-columns: 90% 5%;
+    font-size: 1.5em;
+    border: 2px solid var(--color-L);
+    padding: 1em;
+    width: 100%;
+}
+
+.imovel-item h3{
+    font-size: 1.3em;
+    margin-bottom: 1em;
+}
+
+.imovel-item p{
+    margin: 1em 0;
+}
+
+.column-buttons-imovel-item{
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+/*Botões de editar e remover */
+.btn-imovel-item {
+    font-size: 1.5em;
+    background-color: transparent;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.edit .bi{
+    color: var(--color-green-2);
+    background-color: var(--color-green-background1);
+    padding: 0.5em;
+    border-radius: 50%;
+}
+
+.remove .bi{
+    color: var(--color-alert-1);
+    background-color: var(--color-alert-background);
+    padding: 0.5em;
+    border-radius: 50%;
+}
+
+.edit:hover,
+.remove:hover{
+    transform: scale(1.1);
+}
+
+
+#my-ad-sec {
+    display: none;
+    flex-direction: column;
+    gap: 2em;
+    color: var(--color-A);
+    font-family: var(--fonte-A);
+}
+
+/*Barra de rolagem*/
+#my-ad-sec-container::-webkit-scrollbar {
+    width: 0.7em; 
+}
+
+#my-ad-sec-container::-webkit-scrollbar-thumb {
+    background-color: var(--color-C); /* Cor do "polegar" (a parte que se move) */
+    border-radius: 2em; 
+}
+
+#my-ad-sec-container::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-A); /* Cor do "polegar" ao passar o mouse */
+}
+
+#my-ad-sec-container::-webkit-scrollbar-track {
+    background-color: var(--color-E); /* Cor do fundo da barra de rolagem */
+    border-radius: 1em; 
+}
+
+
+#my-favorit-ad-sec {
+    display: none;
+}
+
+#ads-manage {
+    display: none;
+}
+
+#users-manage {
+    display: none;
+}
+
+#chat-sec{
+    display: none
+}
+
+
+.disabled {
+    background-color: #f0f0f0; /* Cor de fundo cinza claro */
+    color: #a0a0a0; /* Cor do texto cinza */
+    cursor: not-allowed; /* Cursor indicando não permitido */
+    pointer-events: none; /* Desabilita eventos de clique */
+}

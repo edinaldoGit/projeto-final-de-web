@@ -128,8 +128,16 @@ senhaLogin.addEventListener('input', function(){
     cleanAlertsLogin(senhaLogin);
 });
 
+
+//Área de LOGIN de usuário (BACKEND)
 loginForm.addEventListener('submit', async function(event) {
     event.preventDefault();
+
+    //Dialog de Login feito com sucesso
+    let successDialogLogin = document.getElementById('successDialogLogin');
+    let msgSuccessDialogLogin = document.getElementById('mensagemSuccessDialogLogin');
+    let btnCloseSuccessDialogLogin = document.getElementById('btn-close-dialog-msg-success-login');
+
     
     try {
         const response = await fetch('http://localhost:1337/api/auth/local', {
@@ -142,6 +150,16 @@ loginForm.addEventListener('submit', async function(event) {
         });
 
         const data = await response.json();
+        const respostauser = await axios.get(`http://localhost:1337/api/users/me`,{
+            headers: {
+                'Authorization': `Bearer ${data.jwt}`
+            },
+            params:{
+                populate:'role'
+            }
+        })
+
+        localStorage.setItem('role',respostauser.data.role.name)
 
         if (response.ok) {
             localStorage.setItem('jwt', data.jwt);
@@ -149,12 +167,9 @@ loginForm.addEventListener('submit', async function(event) {
 
             const userNameT = JSON.parse(localStorage.getItem('user'));
 
-            resultLoginSuccess.style.display = 'flex';
-            loginForm.style.display = 'none';
-            imgLoginModal.style.display = 'none';
-            titleLoginModal.style.display = 'none';
+            msgSuccessDialogLogin.innerText = 'Bem-vindo(a) de volta, ' + getFirstName(userNameT.nameUser) + '!';
 
-            nameUser.innerHTML = getFirstName(userNameT.nameUser);
+            successDialogLogin.showModal();
 
             setTimeout(() => {
                 window.location.href = 'index.html';
@@ -175,3 +190,4 @@ loginForm.addEventListener('submit', async function(event) {
         resultDiv.textContent = 'Erro ao tentar fazer login. Tente novamente mais tarde.';
     }
 });
+

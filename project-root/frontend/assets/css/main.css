@@ -58,3 +58,203 @@ body::-webkit-scrollbar-track {
 button {
     cursor: pointer;
 }
+
+/* Fundo escurecido ao abrir o diálogo */
+.erroDialogClass::backdrop,
+.successDialogClass::backdrop,
+.confirmDialogClass::backdrop{
+    background-color: rgba(0, 0, 0, 0.607);
+}
+
+/*Dialog de mensagem de erro------------------------------------------*/
+.erroDialogClass {
+    border: none;
+    border-radius: 1.3em;
+    padding: 2.5em;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width: 30%;
+    height: auto;
+    max-height: 25em;
+    text-align: center;
+    position: fixed; 
+    inset: 0;       
+    margin: auto;  
+    align-content: center;  
+    background-color: white;
+    align-content: center;
+}
+
+.erroDialogClass h2 {
+    color: var(--color-alert-1);
+    font-size: 5em;
+}
+
+.erroDialogClass p {
+    color: var(--color-A);
+    font-family: var(--fonte-A);
+    margin: 1.5em 0;
+    font-size: 2em;
+}
+
+.erroDialogClass button {
+    display: flex;
+    color: var(--color-A);
+    font-size: 1.3em;
+    font-family: var(--fonte-A);
+    background-color: var(--color-L);
+    border-radius: 1.5em;
+    border: none;
+    padding: 0.5em 0.8em;
+    cursor: pointer;
+    width: 100%;
+    justify-content: center;
+    margin-top: auto;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.erroDialogClass button:hover {
+    color: white;
+    background-color: var(--color-A);
+}
+
+.erroDialogClass::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Dialog de mensagem de Sucesso -----------------------------------*/
+.successDialogClass {
+    border: none;
+    border-radius: 1.3em;
+    padding: 2.5em;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width: 30%;
+    height: auto; /* A altura se ajusta ao conteúdo */
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%; 
+    align-content: center;
+    transform: translate(-50%, -50%); 
+    background-color: white;
+    overflow: hidden;
+}
+
+.successDialogClass h2{
+    color: var(--color-green-1);
+    font-size: 5em;
+}
+
+.successDialogClass p{
+    color: var(--color-A);
+    font-family: var(--fonte-A);
+    margin: 1.5em 0;
+    font-size: 2em;
+}
+
+.successDialogClass button{
+    display: flex;
+    color: var(--color-A);
+    font-size: 1.3em;
+    font-family: var(--fonte-A);
+    background-color: var(--color-L);
+    border-radius: 1.5em;
+    border: none;
+    padding: 0.5em 0.8em;
+    cursor: pointer;
+    width: 100%;
+    justify-content: center;
+    margin-top: auto;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.successDialogClass button:hover{
+    color: white;
+    background-color: var(--color-A);
+}
+
+/*Dialog de mensagem de confirmação -----------------------------------*/
+.confirmDialogClass {
+    border: none;
+    border-radius: 1.3em;
+    padding: 2.5em;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width: 30%;
+    height: auto; /* A altura se ajusta ao conteúdo */
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%; 
+    align-content: center;
+    transform: translate(-50%, -50%); 
+    background-color: white;
+    overflow: hidden;
+}
+
+.confirmDialogClass h2 {
+    color: var(--color-alert-1);
+    font-size: 5em;
+}
+
+.confirmDialogClass p {
+    color: var(--color-A);
+    font-family: var(--fonte-A);
+    margin: 1.5em 0;
+    font-size: 2em;
+}
+
+/*Container dos botões do dialogo de confirmação*/
+#btns-options-confirm-delete-account{
+    display: flex;
+    gap: 1em;
+}
+
+/*Botão de NÃO do diálogo de confirmação*/
+#btn-no-confirm-dialog {
+    display: flex;
+    color: var(--color-A);
+    font-size: 1.3em;
+    font-family: var(--fonte-A);
+    background-color: var(--color-L);
+    border-radius: 1.5em;
+    border: none;
+    padding: 0.5em 0.8em;
+    cursor: pointer;
+    width: 100%;
+    justify-content: center;
+    margin-top: auto;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#btn-no-confirm-dialog:hover {
+    color: white;
+    background-color: var(--color-A);
+}
+
+/*Botão de SIM do diálogo de confirmação*/
+#btn-yes-confirm-dialog{
+    display: flex;
+    color: var(--color-green-2);
+    font-size: 1.3em;
+    font-family: var(--fonte-A);
+    background-color: var(--color-green-background1);
+    border-radius: 1.5em;
+    border: none;
+    padding: 0.5em 0.8em;
+    cursor: pointer;
+    width: 100%;
+    justify-content: center;
+    margin-top: auto;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#btn-yes-confirm-dialog:hover {
+    color: white;
+    background-color: var(--color-A);
+}
+
+
+.disabled {
+    pointer-events: none; 
+    opacity: 0.5;         
+    cursor: not-allowed;   
+}

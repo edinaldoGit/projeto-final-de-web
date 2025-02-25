@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="assets/css/e-points.css">
     <link rel="stylesheet" href="assets/css/sobre.css">
     <link rel="stylesheet" href="assets/css/suporte.css">
+    <link rel="stylesheet" href="assets/css/anunciar.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
 
     <!-- AXIOS -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -36,9 +38,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
     <!--API Google Maps-->
-    <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4j3PNtFcbtul_28oGXdAf-vJKDa51qQg&loading=async&callback=initMap" defer>
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4j3PNtFcbtul_28oGXdAf-vJKDa51qQg&libraries=places&callback" async defer></script>
+
 
     <!--Importando JAVASCRIPT-->
     <script type="module" src="assets/js/main.js" defer></script>
@@ -69,6 +70,9 @@
                 <li class="separador"></li>
                 <li>
                     <button id="button-suporte" class="nav-bar-item">Suporte</button>
+                </li>
+                <li>
+                    <button id="btn-announce" class="nav-bar-item">Anunciar imóvel</button>
                 </li>
                 <li id="area-button-login-logout">    
                     <button id="button-login">
@@ -157,16 +161,6 @@
                         <div id="result-login-error">
                         </div>
                     </form>
-                    <div id="result-login-success">
-                        <i id="icon-login-sucess" class="bi bi-check-circle-fill"></i>
-                        <h1>
-                            Login realizado com sucesso! 
-                        </h1>
-                        <p id="msg-welcome-user">
-                            Bem-vindo de volta <strong><span id="name-user"></span></strong>!
-                        </p>
-                        <p id="msg-redirect-to-home-page">Redirecionando para a página principal...</p>
-                    </div>
                 </div>
 
                 <!-- SEÇÃO DE CADASTRO-->
@@ -321,6 +315,12 @@
                 </div>
             </div>
         </div>
+        <dialog class="successDialogClass" id="successDialogLogin">
+            <h2><i class="bi bi-check-circle-fill"></i></h2>
+            <p id="mensagemSuccessDialogLogin"></p>
+            <p>Redirecionando para a página principal, aguarde...</p>
+            <button id="btn-close-dialog-msg-success-login">Fechar</button>
+        </dialog>
     </div> 
 </body>
 </html>

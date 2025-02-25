@@ -1,0 +1,168 @@
+<div id="user-profile">
+    <nav id="nav-bar-sec-profile">
+        <ul>
+            <li id="item-1-nav-bar-sec-prof">
+                <button id="button-info-profile-sec" class="nav-bar-item-sec-profile">
+                    <i class="bi bi-person-vcard sec-profile-bar"></i> Informações Pessoais
+                </button>
+            </li>
+            <li id="item-2-nav-bar-sec-prof">
+                <button id="button-config-account-sec" class="nav-bar-item-sec-profile">
+                    <i class="bi bi-person-gear sec-profile-bar"></i> Conta
+                </button>
+            </li> 
+            <li id="item-3-nav-bar-sec-prof">
+                <button id="button-my-ad-sec" class="nav-bar-item-sec-profile">
+                    <i class="bi bi-house-gear-fill sec-profile-bar"></i> Meus imóveis 
+                </button>
+            </li>
+            <li id="item-4-nav-bar-sec-prof">
+                <button id="button-fav-ad" class="nav-bar-item-sec-profile">
+                    <i class="bi bi-heart-fill sec-profile-bar"></i> Favoritos
+                </button>
+            </li>
+            <li id="item-5-nav-bar-sec-prof">
+                <button id="button-chat-sec" class="nav-bar-item-sec-profile">
+                    <i class="bi bi-envelope-fill sec-profile-bar"></i> Mensagens
+                </button>
+            </li>
+            <li id="item-6-nav-bar-sec-prof">
+                <button id="button-user-manage" class="nav-bar-item-sec-profile">
+                    <i class="bi bi-house-gear-fill sec-profile-bar"></i> Gerênciar usuários 
+                </button>
+            </li>
+            <li id="item-7-nav-bar-sec-prof">
+                <button id="button-ads-manage" class="nav-bar-item-sec-profile">
+                    <i class="bi bi-person-gear sec-profile-bar"></i> Gerenciar imóveis
+                </button>
+            </li>
+        </ul>    
+        <div id="indicator"></div>   
+    </nav>
+    
+    <div id="column-profile-sec">
+        <section class="sec-profile-op" id="personal-data-sec">
+            <h1>Informações Pessoais</h1>
+            <div class="data-container" id="data-profile-container">
+                <div id="prof-pic-and-butt-edit-prof-pic">
+                    <img id="pic-profile-user-sec-profile" src="assets/img/img-icon-profile-user.jpg" alt="foto de perfil do usuário">
+                    <input type="file" id="select-pic-profile" name="imagem" accept="image/*" style="display: none;" required>
+                    <label id="button-edit-prof-pic-sec-profile" for="select-pic-profile" class="botao-imagem">Alterar Foto</label> 
+                </div>
+                <div id="column-two-section">
+                    <div id="description-prof-user-sec-profile">
+                        <span><strong>Nome:</strong> <span id="user-name"> </span></span>
+                        <span> <strong>Email:</strong> <span id="user-email"></span></span>
+                        <span><strong>Tipo de usuário:</strong> <span id="user-type"></span></span>
+                        <span><strong>Contato:</strong> <span id="user-telefone"></span></span>
+                    </div>
+                   
+                    <form id="profile-edit-form">
+                        <div>
+                            <label for="name-form-edit">Nome:</label>
+                            <input type="text" id="name-form-edit" name="name" value="Francisco Edinaldo dos Santos" required>
+                        </div>
+                        <div>
+                            <label for="email-form-edit">Email:</label>
+                            <input type="email" id="email-form-edit" name="email" value="fraedinsansil@gmail.com" required>
+                        </div>
+                        <div>
+                            <label for="contact-form-edit">Contato:</label>
+                            <input type="tel" id="contact-form-edit" name="contact" value="(88) 9 96731480" required>
+                        </div>
+                        <div>
+                            <button id="button-save-edit-profile" type="submit">Salvar Alterações</button>
+                        </div>
+                    </form>                    
+                </div>
+                <div id="area-bttn-edit-and-close-prof-description">
+                    <button id="button-edit-prof-description">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button id="button-close-edit-prof-description">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="sec-profile-op" id="config-account-sec">
+            <h1>Conta</h1>
+            <div class="data-container" id="data-config-account-container">
+                <div id="prof-pic-and-butt-edit-prof-pic">
+                    <img id="pic-profile-user-sec-profile" src="assets/img/fotodeperfil.png" alt="foto de perfil do usuário">
+                </div>
+                <div class="column-two-section" id="column-change-password-and-delete-account">
+                    <div class="change-password-and-delete-account">
+                        <form id="change-password-form">
+                            <h2>Mudar Senha</h2>
+                            <div class="input-group">
+                                <label for="current-password">Senha Atual</label>
+                                <input type="password" id="current-password" placeholder="Digite sua senha atual" required>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="new-password">Nova Senha</label>
+                                <input type="password" id="new-password" placeholder="Digite sua nova senha" required>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="confirm-new-password">Confirmar Nova Senha</label>
+                                <input type="password" id="confirm-new-password" placeholder="Confirme sua nova senha" required>
+                            </div>
+
+                            <button id="btn-update-password" type="submit" class="save-button">Salvar Alterações</button>
+                        </form>
+                    </div>
+                    
+                    <div class="separador-sec"></div>
+                    <!-- Seção de Excluir Conta -->
+                    <div class="delete-account">
+                        <h2>Excluir Conta</h2>
+                        <p> <strong>ATENCÃO:</strong> ao excluir sua conta, todos os seus dados serão permanentemente removidos. Esta ação não poderá ser desfeita.</p>
+                        <button id="delete-account-button" class="delete-button">Excluir Conta</button>
+                    </div> 
+                    <dialog class="confirmDialogClass" id="confirmDialogDeleteAccount">
+                        <h2><i class="bi bi-exclamation-triangle-fill"></i></h2>
+                        <p id="mensagemConfirm"></p>
+                        <div id="btns-options-confirm-delete-account">
+                            <button id="btn-yes-confirm-dialog">
+                                Sim
+                            </button>
+                            <button id="btn-no-confirm-dialog">
+                                Não
+                            </button>
+                        </div>
+                    </dialog>                 
+                </div>
+            </div>
+        </section>
+        <section class="sec-profile-op" id="my-ad-sec">
+            <h1>Meus imóveis</h1>
+            <div class="data-container" id="my-ad-sec-container"> 
+                
+            </div>
+        </section>
+        <section class="sec-profile-op" id="my-favorit-ad-sec">
+            <h1>Favoritos</h1>
+        </section>
+        <section class="sec-profile-op" id="chat-sec">
+            <h1>Chat </h1>
+        </section>
+        <section class="sec-profile-op" id="ads-manage">
+            <h1>Gerênciar imóveis</h1>
+        </section>
+        <section class="sec-profile-op" id="users-manage">
+            <h1>Gerênciar usuários</h1>
+        </section>
+        <dialog class="erroDialogClass" id="erroDialog">
+            <h2><i class="bi bi-x-circle-fill"></i></h2>
+            <p id="mensagemErro"></p>
+            <button id="btn-close-dialog-msg-error">Fechar</button>
+        </dialog>
+        <dialog class="successDialogClass" id="successDialog">
+            <h2><i class="bi bi-check-circle-fill"></i></h2>
+            <p id="mensagemSuccess"></p>
+            <button id="btn-close-dialog-msg-success">Fechar</button>
+        </dialog>
+    </div>
+</div>

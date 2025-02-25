@@ -325,9 +325,7 @@ typeUserSignup.addEventListener('change', function () {
   }
 });
 
-
-
-// Criando um novo usuário (cadastro)
+// Criando um novo usuário (CREATE USER)------------------------------------------------------
 signupForm.addEventListener("submit", async function(event) {
   event.preventDefault();
 

@@ -38,10 +38,10 @@ fieldset {
     gap: 1em;
     font-size: 1em;
 
-    /* Adiciona dimensões fixas e barra de rolagem */
-    max-height: 35em; /* Ajuste conforme necessário */
+    
+    max-height: 35em;
     overflow-y: auto;
-    padding-right: 0.8em; /* Para evitar que o conteúdo encoste na barra de rolagem */
+    padding-right: 0.8em; 
 }
 
 #signup-form legend{

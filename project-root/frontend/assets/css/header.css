@@ -29,7 +29,7 @@ header {
 
 .nav-bar ul {
     display: grid;
-    grid-template-columns: auto 2px auto 2px auto 2px auto auto auto;
+    grid-template-columns: auto 2px auto 2px auto 2px auto auto auto auto;
     align-items: center;
     gap: 0;
     width: 100%;
@@ -78,8 +78,8 @@ header {
     border-radius: 2em;
     border: none;
     padding: 0.5em;
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 100%;
     cursor: pointer;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
@@ -95,13 +95,14 @@ header {
     align-items: center;
     justify-content: center;
     font-size: 0.9em;
+    color: var(--color-A);
     font-family: "Questrial", serif;
     background-color: var(--color-B);
     border-radius: 2em 0 0 2em;
-    border: none;
+    border: 2px solid var(--color-A);
     padding: 0.5em;
-    width: 50%;
-    height: 80%;
+    width: 70%;
+    height: 100%;
     cursor: pointer;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
@@ -123,12 +124,28 @@ header {
     border: none;
     padding: 0.5em;
     width: 80%;
-    height: 80%;
+    height: 100%;
     cursor: pointer;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 #button-profile:hover {
+    background-color: #0047a5e7;
+    transform: scale(1.1);
+}
+
+/*Botão de anunciar imóvel*/
+#btn-announce {
+    color: white;
+    font-size: 0.9em;
+    font-family: "Questrial", serif;
+    background-color: var(--color-A);
+    padding: 0 1em;
+    border-radius: 0.5em;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#btn-announce:hover {
     background-color: #0047a5e7;
     transform: scale(1.1);
 }

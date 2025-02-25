@@ -73,6 +73,22 @@
     },
     "nameUser": {
       "type": "string"
+    },
+    "pictureProfile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "imoveis": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::imovel.imovel"
     }
   }
 }
