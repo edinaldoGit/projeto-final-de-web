@@ -2,7 +2,7 @@
     <h2 id="title-sec-anunciar">Anuncie seu Imóvel</h2>
     <p>Divulgue seu imóvel para estudantes universitários de Quixadá. Preencha os dados abaixo e facilite o contato com futuros inquilinos.</p>
 
-    <form id="ad-form" action="" method="POST" class="form-anuncio">
+    <form id="ad-form" method="POST" class="form-anuncio">
         <div class="campo">
             <label for="titulo">Título do Anúncio *</label>
             <input type="text" id="titulo-ad" name="titulo" required placeholder="Ex: Kitnet próxima à UFC">
@@ -43,7 +43,7 @@
         <div class="campo">
             <label for="select-album">Fotos do Imóvel *</label>
             <div id="area-to-send-album">
-                <input type="file" id="select-album" name="imagem" accept="image/*" multiple style="display: none;">
+                <input type="file" id="select-album" name="imagem" accept="image/*" multiple style="display: none;" required>
                 <label for="select-album" class="botao-imagem">Selecionar Imagens</label>
                 <span id="nome-arquivo">Nenhum arquivo selecionado</span>
             </div>

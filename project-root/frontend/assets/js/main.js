@@ -83,188 +83,211 @@ function loadContentSection(pagina, callback) {
 
 // Funções específicas de cada seção
 function initHome() {
-    const token = getDataUser('token');
-    const role = getDataUser('role');
-    const user = getDataUser('user');
-
     console.log("Home carregada!");
+
+    //VARIÁVEIS-------------------------------------------------------
     let modalAdCard = document.getElementById('modal-ad-card');
     let bttnCloseModal = document.getElementById('bttn-close-modal-ad-card');
 
-
-    // Dados fictícios simulando anúncios de imóveis
-    const anuncios = [
-        {
-            id: 1,
-            titulo: "Kitnet perto da UFC",
-            preco: "R$ 800",
-            localizacao: "Centro",
-            imagem: "assets/img/anuncios/anuncio-1.jpg"
-        },
-        {
-            id: 2,
-            titulo: "Apartamento mobiliado",
-            preco: "R$ 950",
-            localizacao: "Próximo ao supermercado",
-            imagem: "assets/img/anuncios/anuncio-1.jpg"
-        },
-        {
-            id: 3,
-            titulo: "Casa com 2 quartos",
-            preco: "R$ 1000",
-            localizacao: "Bairro Lagoa",
-            imagem: "assets/img/anuncios/anuncio-2.jpg"
-        },
-        {
-            id: 4,
-            titulo: "Casa com 2 quartos",
-            preco: "R$ 1000",
-            localizacao: "Bairro Lagoa",
-            imagem: "assets/img/anuncios/anuncio-3.jpg"
-        },
-        {
-            id: 5,
-            titulo: "Casa com 2 quartos",
-            preco: "R$ 1000",
-            localizacao: "Bairro Lagoa",
-            imagem: "assets/img/anuncios/anuncio-4.jpg"
-        },
-        {
-            id: 6,
-            titulo: "Casa com 2 quartos",
-            preco: "R$ 1000",
-            localizacao: "Bairro Lagoa",
-            imagem: "assets/img/anuncios/anuncio-1.jpg"
-        },
-        {
-            id: 1,
-            titulo: "Kitnet perto da UFC",
-            preco: "R$ 800",
-            localizacao: "Centro",
-            imagem: "assets/img/anuncios/anuncio-1.jpg"
-        },
-        {
-            id: 2,
-            titulo: "Apartamento mobiliado",
-            preco: "R$ 950",
-            localizacao: "Próximo ao supermercado",
-            imagem: "assets/img/anuncios/anuncio-1.jpg"
-        },
-        {
-            id: 3,
-            titulo: "Casa com 2 quartos",
-            preco: "R$ 1000",
-            localizacao: "Bairro Lagoa",
-            imagem: "assets/img/anuncios/anuncio-2.jpg"
-        },
-        {
-            id: 4,
-            titulo: "Casa com 2 quartos",
-            preco: "R$ 1000",
-            localizacao: "Bairro Lagoa",
-            imagem: "assets/img/anuncios/anuncio-3.jpg"
-        },
-        {
-            id: 5,
-            titulo: "Casa com 2 quartos",
-            preco: "R$ 1000",
-            localizacao: "Bairro Lagoa",
-            imagem: "assets/img/anuncios/anuncio-4.jpg"
-        },
-        {
-            id: 6,
-            titulo: "Casa com 2 quartos",
-            preco: "R$ 1000",
-            localizacao: "Bairro Lagoa",
-            imagem: "assets/img/anuncios/anuncio-1.jpg"
+    //DEFINIÇÃO DE FUNÇÕES-------------------------------------------- 
+    //(READ) - Retorna lista de TODOS os imóveis 
+    async function returnAllAds() {
+        try {
+            const response = await axios.get(`http://localhost:1337/api/imoveis`, {
+                params: {
+                    populate: '*'
+                }
+            });
+            console.log(response.data.data);
+            return response.data.data;
+        } catch (error) {
+            console.error('Erro ao listar todos os imóveis:', error);
         }
-    ];
+    }
 
-    // Função para exibir os anúncios
-    function carregarAnuncios(lista) {
+    // Função que cria os cards com os anúncios
+    // Dentro da função "carregarAnuncios"
+    async function carregarAnuncios(lista) {
         const container = document.getElementById('ad-grid');
-        container.innerHTML = ''; // Limpa os anúncios antes de recarregar
+
+        container.innerHTML = '';
+
+        if (!Array.isArray(lista)) {  
+            console.error("Erro: a lista de anúncios não é um array válido.", lista);
+            return;
+        }
 
         lista.forEach(anuncio => {
+            if (!anuncio || !anuncio.titleAd) {
+                console.error("Erro: Estrutura do anúncio inválida", anuncio);
+                return;
+            }
+
+            const baseURL = 'http://127.0.0.1:1337'; 
+
+            // Verificar se galleryAd existe e pegar a primeira imagem
+            const primeiraImagem = anuncio.galleryAd && Array.isArray(anuncio.galleryAd) && anuncio.galleryAd.length > 0
+                ? baseURL + anuncio.galleryAd[0].url  
+                : 'default-image.jpg'; 
+
             const card = document.createElement("div");
             card.classList.add("anuncio-card");
+
+            card.id = `${anuncio.id}`;
+
             card.innerHTML = `
-                <img src="${anuncio.imagem}" alt="${anuncio.titulo}">
-                <h3>${anuncio.titulo}</h3>
-                <p><i class="bi bi-geo-alt"></i> ${anuncio.localizacao}</p>
-                <p><i class="bi bi-cash-stack"></i> <strong>${anuncio.preco}</strong></p>
+                <img src="${primeiraImagem}" alt="${anuncio.titleAd}">
+                <h3>${anuncio.titleAd || "Título não disponível"}</h3> 
+                <p><i class="bi bi-geo-alt"></i> ${anuncio.neighborhood || "Localização não disponível"}</p>
+                <p><i class="bi bi-cash-stack"></i> <strong>${anuncio.rentValue || "Valor não informado"}</strong></p>
             `;
             container.appendChild(card);
         });
 
-        // Reatribui o evento de clique aos novos cards
+        // Atribui o evento de clique aos novos cards
         document.querySelectorAll(".anuncio-card").forEach(elemento => {
-            elemento.addEventListener("click", () => {
+            elemento.addEventListener("click", async () => {
                 modalAdCard.style.display = 'block';
+                let allAds = await returnAllAds();
+                let titleAd = document.getElementById('title-modal-ad-card');
+                let descriptionAd = document.getElementById('description-property');
+                let rentValueAd = document.getElementById('description-ad-rent-value');
+                let neighborhoodAd = document.getElementById('description-ad-rent-location');
+                let contractTimeAd = document.getElementById('description-ad-rent-time');
+                let galleryContainer = document.querySelector(".gallery"); 
+            
+                let controls = galleryContainer.querySelector(".controls");
+            
+                let imageContainer = galleryContainer.querySelector(".image-container");
+                if (!imageContainer) {
+                    imageContainer = document.createElement('div');
+                    imageContainer.classList.add('image-container');
+                    galleryContainer.appendChild(imageContainer);
+                }
+
+                imageContainer.innerHTML = '';
+            
+                for (let ad of allAds) {
+                    if (ad.id == elemento.id) {
+                        titleAd.innerText = ad.titleAd;
+                        descriptionAd.innerText = ad.descriptionAd;
+                        rentValueAd.innerText = ad.rentValue;
+                        neighborhoodAd.innerText = ad.neighborhood;
+                        contractTimeAd.innerText = ad.contractTime;
+            
+                        const baseURL = 'http://127.0.0.1:1337'; 
+ 
+                        if (ad.galleryAd && Array.isArray(ad.galleryAd) && ad.galleryAd.length > 0) {
+
+                            ad.galleryAd.forEach(image => {
+                                let imgElement = document.createElement('img');  
+                                imgElement.src = baseURL + image.url;  
+                                imgElement.alt = "Imagem do anúncio";  
+                                imgElement.classList.add('gallery-image'); 
+            
+                                imageContainer.appendChild(imgElement);  
+                            });
+                        } else {
+                            
+                            let defaultImg = document.createElement('img');
+                            defaultImg.src = 'default-image.jpg';
+                            defaultImg.alt = "Imagem padrão";
+                            imageContainer.appendChild(defaultImg);
+                        }
+
+                        loadAdModal();
+                        break; 
+                    }
+                }
             });
         });
     }
 
-    // Busca dinâmica
-    document.getElementById("search-ad").addEventListener("input", (event) => {
-        const termo = event.target.value.toLowerCase();
-        const resultados = anuncios.filter(anuncio => 
-            anuncio.titulo.toLowerCase().includes(termo) || 
-            anuncio.localizacao.toLowerCase().includes(termo)
-        );
-        carregarAnuncios(resultados);
-    });
-
-    // Carrega os anúncios ao iniciar
-    carregarAnuncios(anuncios);
-
-    // Clicar em um card de anúncio
-    document.querySelectorAll(".anuncio-card").forEach(elemento => {
-        elemento.addEventListener("click", () => {
-            modalAdCard.style.display = 'block';
+    function loadAdModal() {
+        console.log("loadAdModal foi chamada"); // Verifique se a função está sendo chamada
+    
+        // Selecionar as imagens dentro de .image-container
+        const images = Array.from(document.querySelectorAll('.image-container .gallery-image'));
+        console.log(images);  // Verifique as imagens encontradas
+    
+        if (images.length === 0) {
+            console.log("Não há imagens na galeria.");
+            return;
+        }
+    
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentIndex = 0;  // Iniciar com a primeira imagem
+    
+        // Função para exibir a imagem atual
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.remove('active-img-gallery'); // Remover a classe de todas as imagens
+                if (i === index) {
+                    img.classList.add('active-img-gallery'); // Adicionar a classe à imagem ativa
+                }
+            });
+        }
+    
+        // Mostrar a primeira imagem ao carregar
+        showImage(currentIndex);
+    
+        // Evento de clique no botão "anterior"
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length; // Lógica para navegar para a imagem anterior
+            showImage(currentIndex);
         });
-    });
-
-    // fechar modal 
-    bttnCloseModal.addEventListener('click', function(){
-        modalAdCard.style.display = 'none';
-    });
-
-
-    //Galeria de imagens dos anúncios 
-    const images = document.querySelectorAll('.gallery-image');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-
-    let currentIndex = 0;
-
-    function showImage(index) {
-        images.forEach((img, i) => {
-            img.classList.remove('active-img-gallery');
-            if (i === index) {
-                img.classList.add('active-img-gallery');
-            }
+    
+        // Evento de clique no botão "próximo"
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length; // Lógica para navegar para a próxima imagem
+            showImage(currentIndex);
+        });
+    
+        // Fechar o modal ao clicar no botão de fechar
+        bttnCloseModal.addEventListener('click', function() {
+            modalAdCard.style.display = 'none';
         });
     }
 
-    prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(currentIndex);
-    });
+    //Função que carrega conteúdo na HOME
+    async function LoadContentHome(){
+        try {
+            const response = await returnAllAds();
+            carregarAnuncios(response);
+        } catch (error) {
+            console.error("Erro ao carregar os anúncios:", error);
+        }
+    }
 
-    nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
-    });
+    // Função que realiza a busca dinâmica de anúncios
+    function searchImoveis() {
+        document.getElementById("search-ad").addEventListener("input", async (event) => {
+            const termo = event.target.value.toLowerCase();
 
-    // Mostrar a primeira imagem ao carregar a página
-    showImage(currentIndex);
+            let anuncios = await returnAllAds();
+
+            const resultados = anuncios.filter(anuncio => 
+                anuncio.titleAd.toLowerCase().includes(termo) || 
+                anuncio.neighborhood.toLowerCase().includes(termo) 
+            );
+
+            carregarAnuncios(resultados);
+        });
+    }
+
     
+    //Chamando Funções 
+    LoadContentHome();
+
+    searchImoveis();
+
+    loadAdModal();
+
 }
 
 function initSobre() {
-    console.log("Sobre carregada!");
-   
+    console.log("Sobre carregada!");  
 }
 
 function initPontosE() {
@@ -478,43 +501,63 @@ function initAnunciar() {
         event.preventDefault();
 
         const user = JSON.parse(localStorage.getItem('user'));
-      
-        const imovelData = {
-          titleAd: document.getElementById('titulo-ad').value,
-          descriptionAd: document.getElementById('descricao-ad').value,
-          neighborhood: document.getElementById('localizacao-ad').value,
-          rentValue: document.getElementById('valor-aluguel').value,
-          latitude: document.getElementById('latitude').value,
-          longitude: document.getElementById('longitude').value,
-          contractTime: document.getElementById('duracao-contrato').value,
-          user: user.id, 
-        };
-      
+        const token = localStorage.getItem('jwt');
+   
+        
+        const imageFiles = document.getElementById("select-album").files;
+
+        if (imageFiles.length === 0) {
+            exibirErro('Por favor, selecione pelo menos uma imagem para o anúncio.');
+            return;
+        }
+
+        let imagemIds = []; 
+
         try {
-          const response = await axios.post(
-            "http://localhost:1337/api/imoveis",
-            { data: imovelData },
-            {
-              headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-              }
+            const formData = new FormData();
+            for (let i = 0; i < imageFiles.length; i++) {
+                formData.append('files', imageFiles[i]);
             }
-          );
-          
-          exibirSuccess('Imóvel cadastrado com sucesso!')
+
+            const response = await axios.post('http://localhost:1337/api/upload', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    'Authorization': `Bearer ${token}`,
+                },
+            });
+
+            imagemIds = response.data.map(img => ({ id: img.id }));
         } catch (error) {
-            exibirErro('Erro ao cadastrar imóvel')
-          console.error(
-            "Erro ao cadastrar imóvel:",
-            error.response ? error.response.data : error.message
-          );
-          exibirErro(
-            "Erro ao cadastrar: " +
-              (error.response && error.response.data.message
-                ? error.response.data.message
-                : error.message)
-          );
+            console.error('Erro ao fazer upload das imagens:', error);
+            exibirErro('Erro ao fazer upload das imagens.');
+            return;
+        }
+
+        // Dados do imóvel a serem enviados
+        const imovelData = {
+            titleAd: document.getElementById('titulo-ad').value,
+            descriptionAd: document.getElementById('descricao-ad').value,
+            neighborhood: document.getElementById('localizacao-ad').value,
+            rentValue: document.getElementById('valor-aluguel').value,
+            latitude: document.getElementById('latitude').value,
+            longitude: document.getElementById('longitude').value,
+            contractTime: document.getElementById('duracao-contrato').value,
+            galleryAd: imagemIds,
+            user: user.id,
+        };
+    
+        try {
+            const response = await axios.post('http://localhost:1337/api/imoveis', { data: imovelData }, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                },
+            });
+            exibirSuccess('Imóvel cadastrado com sucesso!');
+            return false; 
+        } catch (error) {
+            console.error('Erro ao cadastrar imóvel:', error);
+            exibirErro('Erro ao cadastrar imóvel.');
         }
     });
 }
@@ -815,7 +858,6 @@ function initProfile(){
         }
     
         try {
-            //Valida se a senha atual está correta tentando fazer login novamente.
             const loginResponse = await fetch('http://localhost:1337/api/auth/local', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
